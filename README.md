@@ -83,8 +83,10 @@ create table gastos (
 	fecha date not null,
 	descripcion varchar(255),
 	fichero varchar(255),
+	author varchar(255) not null,
 
-	primary key(id) 
+	primary key(id),
+	foreign key (author) references users(username) 
 ) ENGINE=INNODB DEFAULT CHARACTER SET = utf8;
 
 ```
