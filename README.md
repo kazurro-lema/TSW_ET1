@@ -1,4 +1,4 @@
-mvcblog
+gestionDeGastos
 =======
 
 A Simple Model-View-Controller Blog Example written PHP, for educational
@@ -12,7 +12,7 @@ are many out there!).**
 
 **New! An alternative (beta), component-based (or pull) example is also
 available at
-[https://github.com/lipido/mvcblog-pull](https://github.com/lipido/mvcblog-pull)**
+[https://github.com/lipido/gestionDeGastos-pull](https://github.com/lipido/gestionDeGastos-pull)**
 
 The main MVC components are implemented in the following way:
 
@@ -48,40 +48,33 @@ The action-based (or push) MVC frameworks can be seen as in the following figure
 # Database creation script
 Connect to MySQL console and paste this script.
 ```sql
-create database mvcblog;
-use mvcblog;
+create database gestionDeGastos;
+use gestionDeGastos;
 create table users (
 		username varchar(255),
 		passwd varchar(255),
 		primary key (username)
 ) ENGINE=INNODB DEFAULT CHARACTER SET = utf8;
 
-create table posts (
+create table gastos (
 	id int auto_increment,
-	title varchar(255),
-	content varchar(255),
-	author varchar(255) not null,
+	nombre_gasto varchar(255) not null,
+	cantida_gasto int not null,
+	tipo varchar (255) not null, 
+	entidad varchar(255),
+	fecha date not null,
+	descripcion varchar(255),
+	fichero varchar(255),
 
-	primary key (id),
-	foreign key (author) references users(username)
+	primary key(id) 
 ) ENGINE=INNODB DEFAULT CHARACTER SET = utf8;
 
-create table comments (
-	id int auto_increment,	 
-	content varchar(255),
-	author varchar(255) not null,
-	post int not null,
-
-	primary key (id),
-	foreign key (author) references users(username),
-	foreign key (post) references posts(id) on delete cascade
-) ENGINE=INNODB DEFAULT CHARACTER SET = utf8;
 ```
 # Create username for the database
 Create a username for the database. The connection settings in the PHP code are
 in /core/PDOConnection.php
 ```sql
-grant all privileges on mvcblog.* to mvcuser@localhost identified by "mvcblogpass";
+grant all privileges on gestionDeGastos.* to mvcuser@localhost identified by "gestionDeGastospass";
 ```
 
 # TODO
