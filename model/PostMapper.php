@@ -133,6 +133,7 @@ class PostMapper {
 		public function save(Post $post) {
 			$stmt = $this->db->prepare("INSERT INTO posts(title, content, author) values (?,?,?)");
 			$stmt->execute(array($post->getTitle(), $post->getContent(), $post->getAuthor()->getUsername()));
+
 			return $this->db->lastInsertId();
 		}
 

@@ -2,7 +2,7 @@
 
 require_once(__DIR__ . "/../core/ValidationException.php");
 
-class Post
+class Gasto
 {
 
     private $id;
@@ -66,6 +66,11 @@ class Post
     public function getFichero()
     {
         return $this->fichero;
+    }
+
+    public function getAuthor()
+    {
+        return $this->author;
     }
 
     public function setAuthor(User $author)
