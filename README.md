@@ -56,6 +56,24 @@ create table users (
 		primary key (username)
 ) ENGINE=INNODB DEFAULT CHARACTER SET = utf8;
 
+create table posts (
+	id int auto_increment,
+	title varchar(255),
+	content varchar(255),
+	author varchar(255) not null,
+	primary key (id),
+	foreign key (author) references users(username)
+) ENGINE=INNODB DEFAULT CHARACTER SET = utf8;
+create table comments (
+	id int auto_increment,	 
+	content varchar(255),
+	author varchar(255) not null,
+	post int not null,
+	primary key (id),
+	foreign key (author) references users(username),
+	foreign key (post) references posts(id) on delete cascade
+) ENGINE=INNODB DEFAULT CHARACTER SET = utf8;
+
 create table gastos (
 	id int auto_increment,
 	nombre_gasto varchar(255) not null,
@@ -74,7 +92,7 @@ create table gastos (
 Create a username for the database. The connection settings in the PHP code are
 in /core/PDOConnection.php
 ```sql
-grant all privileges on gestionDeGastos.* to mvcuser@localhost identified by "gestionDeGastospass";
+grant all privileges on gestionDeGastos.* to mvcuser@localhost identified by "1234";
 ```
 
 # TODO
