@@ -67,6 +67,3 @@ $view->setVariable("title", "Posts");
 <?php endforeach; ?>
 
 </table>
-<?php if (isset($currentuser)): ?>
-	<a href="index.php?controller=posts&amp;action=add"><?= i18n("Create post") ?></a>
-<?php endif; ?>

@@ -15,7 +15,7 @@ $currentuser = $view->getVariable("currentusername");
 	<!-- CSS only -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 	<link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
-	<link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -38,23 +38,11 @@ $currentuser = $view->getVariable("currentusername");
 		<card-title>
 			<h3>Blog</h3>
 		</card-title>
-		
-		<nav id="menu" style="background-color:grey">
-			<ul>
-				<li><a href="index.php?controller=posts&amp;action=index">Posts</a></li>
 
-				<?php if (isset($currentuser)) : ?>
-					<li><?= sprintf(i18n("Hello %s"), $currentuser) ?>
-						<a href="index.php?controller=users&amp;action=logout">(Logout)</a>
-					</li>
+		<card-content>
+			<?= $view->getFragment(ViewManager::DEFAULT_FRAGMENT) ?>
+		</card-content>
 
-				<?php else : ?>
-					<li><a href="index.php?controller=users&amp;action=login"><?= i18n("Login") ?></a></li>
-				<?php endif ?>
-			</ul>
-		</nav>
-
-		<?= $view->getFragment(ViewManager::DEFAULT_FRAGMENT) ?>
 
 		<?php
 		include(__DIR__ . "/language_select_element.php");
