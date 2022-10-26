@@ -184,64 +184,6 @@ a {
 	}
 }
 
-/* Lang Translate */
-
-toggle-language {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	font-weight: 200;
-	font-size: medium;
-	text-transform: uppercase;
-}
-
-toggle-language span {
-	font-weight: 700;
-}
-
-.current-content-language {
-	color: var(--first-color);
-}
-
-toggle-language mat-icon {
-	vertical-align: middle;
-}
-
-.mat-icon-button {
-	padding: 0;
-	min-width: 0;
-	width: 40px;
-	height: 40px;
-	flex-shrink: 0;
-	line-height: 40px;
-	border-radius: 50%;
-	font-family: Roboto;
-	font-size: 14px;
-	font-weight: 500;
-}
-.mat-button, .mat-icon-button {
-	box-sizing: border-box;
-	position: relative;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	cursor: pointer;
-	outline: none;
-	border: none;
-	-webkit-tap-highlight-color: transparent;
-	display: inline-block;
-	white-space: nowrap;
-	text-decoration: none;
-	vertical-align: baseline;
-	text-align: center;
-	margin: 0 16px;
-	min-width: 64px;
-	line-height: 36px;
-	border-radius: 4px;
-	overflow: visible;
-}
-
 /* Main Card */
 
 main {

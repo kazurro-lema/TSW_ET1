@@ -8,11 +8,11 @@ $errors = $view->getVariable("errors");
 
 <?php
 
-	if(isset($errors["general"])){
-		$x = $errors['general'];
-		echo "<script type='text/javascript'>alert('$x')</script>";
-	}
-	
+if (isset($errors["general"])) {
+	$x = $errors['general'];
+	echo "<script type='text/javascript'>alert('$x')</script>";
+}
+
 ?>
 
 <div class="login-page">
@@ -21,21 +21,8 @@ $errors = $view->getVariable("errors");
 			<img src="/login/auth/resources/vnghb/login/biccloud/img/bic-cloud-logo-login.png">
 		</div>
 		<div class="bc-navigation">
-			<div class="login-lang kc-locale hide-on-mobile">
-				<div class="lang-dropdown">
-					<a href="#" id="selected-lang" class="selected-locale">English</a>
-					<ul id="lang-list" style="display: none;">
-						<li class="kc-dropdown-item">
-							<a href="/login/auth/realms/grc/login-actions/authenticate?client_id=bicexec-authentication&amp;tab_id=pEJAmV2rbaI&amp;execution=893e9dea-23ed-4c57-aa07-3d1c368dec2c&amp;kc_locale=de">Deutsch</a>
-						</li>
-						<li class="kc-dropdown-item">
-							<a href="/login/auth/realms/grc/login-actions/authenticate?client_id=bicexec-authentication&amp;tab_id=pEJAmV2rbaI&amp;execution=893e9dea-23ed-4c57-aa07-3d1c368dec2c&amp;kc_locale=en">English</a>
-						</li>
-						<li class="kc-dropdown-item">
-							<a href="/login/auth/realms/grc/login-actions/authenticate?client_id=bicexec-authentication&amp;tab_id=pEJAmV2rbaI&amp;execution=893e9dea-23ed-4c57-aa07-3d1c368dec2c&amp;kc_locale=es">Español</a>
-						</li>
-					</ul>
-				</div>
+			<div class="login-lang kc-locale">
+				<?php include(__DIR__ . "/../layouts/toggleLang.php"); ?>
 			</div>
 		</div>
 	</div>
