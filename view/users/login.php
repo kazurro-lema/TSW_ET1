@@ -1,5 +1,4 @@
 <?php
-//file: view/users/login.php
 
 require_once(__DIR__ . "/../../core/ViewManager.php");
 $view = ViewManager::getInstance();
@@ -80,25 +79,3 @@ $errors = $view->getVariable("errors");
 		</div>
 	</div>
 </div>
-
-<script>
-	function showLabelInputsForm() {
-		var inputsText = document.querySelectorAll(".login-form input");
-		for (const inputText of inputsText) {
-			if (inputText.type === "text" || inputText.type === "password") {
-				_showLabel(inputText);
-				inputText.addEventListener("keyup", function(e) {
-					_showLabel(e.target);
-				});
-			}
-		}
-
-		function _showLabel(selector) {
-			if (selector.value === "") {
-				selector.parentElement.getElementsByTagName("label")[0].className = "label-input hidden";
-			} else {
-				selector.parentElement.getElementsByTagName("label")[0].className = "label-input";
-			}
-		}
-	}
-</script>
