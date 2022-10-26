@@ -23,10 +23,5 @@ $view = ViewManager::getInstance();
 		</div>
 		<?= $view->getFragment(ViewManager::DEFAULT_FRAGMENT) ?>
 	</main>
-	<footer>
-		<?php
-		include(__DIR__."/language_select_element.php");
-		?>
-	</footer>
 </body>
 </html>

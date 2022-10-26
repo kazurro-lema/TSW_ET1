@@ -42,11 +42,6 @@ $currentuser = $view->getVariable("currentusername");
 		<card-content>
 			<?= $view->getFragment(ViewManager::DEFAULT_FRAGMENT) ?>
 		</card-content>
-
-
-		<?php
-		include(__DIR__ . "/language_select_element.php");
-		?>
 	</main>
 
 </body>
