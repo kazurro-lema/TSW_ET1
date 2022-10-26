@@ -3,25 +3,20 @@
 
 $view = ViewManager::getInstance();
 
-?><!DOCTYPE html>
-<html>
+?>
+<!DOCTYPE html>
+<html class="bc-login">
+
 <head>
 	<title><?= $view->getVariable("title", "no title") ?></title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/login.css" type="text/css">
 	<?= $view->getFragment("css") ?>
 	<?= $view->getFragment("javascript") ?>
 </head>
+
 <body>
-	<header>
-		<h1><?= i18n("Welcome to the Blog App!") ?></h1>
-	</header>
-	<main>
-		<!-- flash message -->
-		<div id="flash">
-			<?= $view->popFlash() ?>
-		</div>
-		<?= $view->getFragment(ViewManager::DEFAULT_FRAGMENT) ?>
-	</main>
+	<?= $view->getFragment(ViewManager::DEFAULT_FRAGMENT) ?>
 </body>
+
 </html>
