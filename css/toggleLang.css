@@ -15,6 +15,10 @@ toggle-language span {
 	color: #ffffff;
 }
 
+header .current-content-language {
+	color: #1a27a1;
+}
+
 toggle-language mat-icon {
 	vertical-align: middle;
 }
