@@ -6,11 +6,10 @@ $view = ViewManager::getInstance();
 $gasto = $view->getVariable("gasto");
 $errors = $view->getVariable("errors");
 
-$view->setVariable("title", "Edit Gasto");
+$view->setVariable("title", "Add Gasto");
 
 ?><h1><?= i18n("Create gasto") ?></h1>
-<form action="index.php?controller=gastos&amp;action=edit" method="POST">
-    <?= i18n("id") ?>: <input type="text" name="id" value="<?= isset($_POST["id"]) ? $_POST["id"] : $gasto->getId() ?>">
+<form action="index.php?controller=gastos&amp;action=add" method="POST">
 
     <?= i18n("nombre_gasto") ?>: <input type="text" name="nombre_gasto" value="<?= isset($_POST["nombre_gasto"]) ? $_POST["nombre_gasto"] : $gasto->getNombreGasto() ?>">
     <?= isset($errors["nombre_gasto"]) ? i18n($errors["nombre_gasto"]) : "" ?><br>
@@ -35,9 +34,8 @@ $view->setVariable("title", "Edit Gasto");
     <?= i18n("descripcion") ?>:<textarea name="descripcion" rows="4" cols="50" value="<?= isset($_POST["descripcion"]) ? $_POST["descripcion"] : $gasto->getDescripcion() ?>"><?= htmlentities($gasto->getDescripcion()) ?></textarea>
     <?= isset($errors["descripcion"]) ? i18n($errors["descripcion"]) : "" ?><br>
 
-    <?= i18n("fichero") ?><input type="text" name="fichero" value="<?= isset($_POST["fichero"]) ? $_POST["fichero"] : $gasto->getFichero() ?>">
+    <?= i18n("fichero") ?><input type="file" name="fichero" value="<?= isset($_POST["fichero"]) ? $_POST["fichero"] : $gasto->getFichero() ?>">
     <?= isset($errors["fichero"]) ? i18n($errors["fichero"]) : "" ?><br>
 
-    <input type="hidden" name="id" value="<?= $gasto->getId() ?>">
-    <input type="submit" name="submit" value="<?= i18n("Modify gasto") ?>">
+    <input type="submit" name="submit" value="<?= i18n("Add gasto") ?>">
 </form>
