@@ -2,7 +2,7 @@
 
 class PDOConnection {
 	private static $dbhost = "127.0.0.1";
-	private static $dbname = "gestionDeGastos";
+	private static $dbname = "gestiondegastos";
 	private static $dbuser = "mvcuser";
 	private static $dbpass = "1234";
 	private static $db_singleton = null;

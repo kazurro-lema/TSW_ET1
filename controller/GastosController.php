@@ -36,7 +36,7 @@ class GastosController extends BaseController
     public function add()
     {
         if (!isset($this->currentUser)) {
-            throw new Exception("Not in session. Adding posts requires login");
+            throw new Exception("Not in session. Adding gastos requires login");
         }
 
         $gasto = new Gasto();
@@ -56,7 +56,7 @@ class GastosController extends BaseController
 
                 $this->gastoMapper->save($gasto);
 
-                $this->view->setFlash(sprintf(i18n("Post \"%s\" successfully added."), $gasto->getNombreGasto()));
+                $this->view->setFlash(sprintf(i18n("Gastos \"%s\" successfully added."), $gasto->getNombreGasto()));
 
                 $this->view->redirect("gastos", "index");
             } catch (ValidationException $ex) {
@@ -76,18 +76,18 @@ class GastosController extends BaseController
 		}
 
 		if (!isset($this->currentUser)) {
-			throw new Exception("Not in session. Editing posts requires login");
+			throw new Exception("Not in session. Editing gastos requires login");
 		}
 
 		$gastoid = $_REQUEST["id"];
 		$gasto = $this->gastoMapper->findById($gastoid);
 
         if ($gasto == NULL) {
-			throw new Exception("no such post with id: ".$gastoid);
+			throw new Exception("no such gasto with id: ".$gastoid);
 		}
 
 		if ($gasto->getAuthor() != $this->currentUser) {
-			throw new Exception("logged user is not the author of the post id ".$gastoid);
+			throw new Exception("logged user is not the author of the gasto id ".$gastoid);
 		}
 
         if (isset($_POST["submit"])) { 
@@ -105,7 +105,7 @@ class GastosController extends BaseController
 				$gasto->checkIsValidForUpdate(); 
 				$this->gastoMapper->update($gasto);
 
-				$this->view->setFlash(sprintf(i18n("Post \"%s\" successfully updated."),$gasto ->getNombreGasto()));
+				$this->view->setFlash(sprintf(i18n("Gastos \"%s\" successfully updated."),$gasto ->getNombreGasto()));
 
 				$this->view->redirect("gastos", "index");
 
@@ -125,23 +125,23 @@ class GastosController extends BaseController
 			throw new Exception("id is mandatory");
 		}
 		if (!isset($this->currentUser)) {
-			throw new Exception("Not in session. Editing posts requires login");
+			throw new Exception("Not in session. Editing gastos requires login");
 		}
 		
 		$gastoid = $_REQUEST["id"];
 		$gasto = $this->gastoMapper->findById($gastoid);
 
 		if ($gasto == NULL) {
-			throw new Exception("no such post with id: ".$gastoid);
+			throw new Exception("no such gasto with id: ".$gastoid);
 		}
 
 		if ($gasto->getAuthor() != $this->currentUser) {
-			throw new Exception("Post author is not the logged user");
+			throw new Exception("Gasto author is not the logged user");
 		}
 
 		$this->gastoMapper->delete($gasto);
 
-		$this->view->setFlash(sprintf(i18n("Post \"%s\" successfully deleted."),$gasto ->getNombreGasto()));
+		$this->view->setFlash(sprintf(i18n("Gasto \"%s\" successfully deleted."),$gasto ->getNombreGasto()));
 
 		$this->view->redirect("gastos", "index");
 

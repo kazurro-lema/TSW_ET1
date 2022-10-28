@@ -37,5 +37,5 @@ $view->setVariable("title", "Add Gasto");
     <?= i18n("fichero") ?><input type="file" name="fichero" value="<?= isset($_POST["fichero"]) ? $_POST["fichero"] : $gasto->getFichero() ?>">
     <?= isset($errors["fichero"]) ? i18n($errors["fichero"]) : "" ?><br>
 
-    <input type="submit" name="submit" value="<?= i18n("Add gasto") ?>">
+    <input type="submit" name="submit" value="<?= i18n("Add") ?>">
 </form>

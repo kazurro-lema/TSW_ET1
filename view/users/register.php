@@ -6,7 +6,7 @@ $errors = $view->getVariable("errors");
 $user = $view->getVariable("user");
 $view->setVariable("title", "Register");
 ?>
-
+<h1><?= i18n("Register") ?></h1>
 <div class="login-page">
 	<div class="login-header">
 		<div class="bc-logo">

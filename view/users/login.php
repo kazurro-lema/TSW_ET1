@@ -14,7 +14,7 @@ if (isset($errors["general"])) {
 }
 
 ?>
-
+<h1><?= i18n("Login") ?></h1>
 <div class="login-page">
 	<div class="login-header">
 		<div class="bc-logo">

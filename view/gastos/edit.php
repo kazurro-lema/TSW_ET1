@@ -37,5 +37,5 @@ $view->setVariable("title", "Edit Gasto");
     <?= isset($errors["fichero"]) ? i18n($errors["fichero"]) : "" ?><br>
 
     <input type="hidden" name="id" value="<?= $gasto->getId() ?>">
-    <input type="submit" name="submit" value="<?= i18n("Modify gasto") ?>">
+    <input type="submit" name="submit" value="<?= i18n("Modify") ?>">
 </form>

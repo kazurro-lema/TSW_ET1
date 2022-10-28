@@ -1,6 +1,6 @@
 <?php
 
-define("DEFAULT_CONTROLLER", "posts");
+define("DEFAULT_CONTROLLER", "gastos");
 
 define("DEFAULT_ACTION", "index");
 
