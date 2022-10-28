@@ -10,10 +10,12 @@ $view->setVariable("title", "Edit Gasto");
 
 ?><h1><?= i18n("Create gasto") ?></h1>
 <form action="index.php?controller=gastos&amp;action=edit" method="POST">
+    <?= i18n("id") ?>: <input type="text" name="id" value="<?= isset($_POST["id"]) ? $_POST["id"] : $gasto->getId() ?>">
+
     <?= i18n("nombre_gasto") ?>: <input type="text" name="nombre_gasto" value="<?= isset($_POST["nombre_gasto"]) ? $_POST["nombre_gasto"] : $gasto->getNombreGasto() ?>">
     <?= isset($errors["nombre_gasto"]) ? i18n($errors["nombre_gasto"]) : "" ?><br>
 
-    <?= i18n("cantidad_gasto") ?>:<input type="text" name="cantidad_gasto" value="<?= isset($_POST["cantidad_gasto"]) ? $_POST["cantidad_gasto"] : $gasto->getCantidadGasto() ?>">
+    <?= i18n("cantidad_gasto") ?>:<input type="text" name="cantidad_gasto" value="<?= isset($_POST[(int)("cantidad_gasto")]) ? $_POST[(int)("cantidad_gasto")] : $gasto->getCantidadGasto() ?>">
     <?= isset($errors["cantidad_gasto"]) ? i18n($errors["cantidad_gasto"]) : "" ?><br>
 
     <?= i18n("tipo") ?><select name="tipo" selected value="<?= $gasto->getTipo() ?>">

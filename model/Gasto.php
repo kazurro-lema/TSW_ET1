@@ -119,7 +119,7 @@ class Gasto
             $errors["nombre_gasto"] = "nombre_gasto is mandatory";
         }
         if (strlen(trim($this->cantidad_gasto)) == 0) {
-            $errors["cantidad_gasto"] = "cantidad_gasto is mandatory";
+            $errors["cantidad"] = "cantidad_gasto is mandatory";
         }
         if (strlen(trim($this->tipo)) == 0) {
             $errors["tipo"] = "tipo is mandatory";
