@@ -1,5 +1,4 @@
 <?php
-//file: view/layouts/default.php
 
 $view = ViewManager::getInstance();
 $currentuser = $view->getVariable("currentusername");
@@ -14,7 +13,6 @@ $currentuser = $view->getVariable("currentusername");
 
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<link rel="stylesheet" href="css/toggleLang.css" type="text/css">
-	<!-- CSS only -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 	<link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -22,7 +20,7 @@ $currentuser = $view->getVariable("currentusername");
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-	<!-- enable ji18n() javascript function to translate inside your scripts -->
+
 	<script src="index.php?controller=language&amp;action=i18njs">
 	</script>
 	<?= $view->getFragment("css") ?>
@@ -30,7 +28,6 @@ $currentuser = $view->getVariable("currentusername");
 </head>
 
 <body id="body-pd">
-	<!-- header -->
 	<?php include(__DIR__ . "/sidenav.php"); ?>
 
 	<main>
@@ -61,7 +58,6 @@ $currentuser = $view->getVariable("currentusername");
 
 		showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
 
-		/*===== LINK ACTIVE =====*/
 		const linkColor = document.querySelectorAll('.nav_link')
 		const action = new URL(location.href).searchParams.get('action')
 
@@ -75,7 +71,6 @@ $currentuser = $view->getVariable("currentusername");
 			});
 		}
 
-		/*===== Toogle Idioma =====*/
 		const toggleLang = document.getElementById('toggleLang')
 
 		toggleLang.addEventListener('click', function() {

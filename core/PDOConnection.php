@@ -1,9 +1,8 @@
 <?php
-// file: /core/PDOConnection.php
 
 class PDOConnection {
 	private static $dbhost = "127.0.0.1";
-	private static $dbname = "gestiondegastos";
+	private static $dbname = "gestionDeGastos";
 	private static $dbuser = "mvcuser";
 	private static $dbpass = "1234";
 	private static $db_singleton = null;
@@ -11,10 +10,10 @@ class PDOConnection {
 	public static function getInstance() {
 		if (self::$db_singleton == null) {
 			self::$db_singleton = new PDO(
-			"mysql:host=".self::$dbhost.";dbname=".self::$dbname.";charset=utf8", // connection string
+			"mysql:host=".self::$dbhost.";dbname=".self::$dbname.";charset=utf8", 
 			self::$dbuser,
 			self::$dbpass,
-			array( // options
+			array( 
 				PDO::ATTR_EMULATE_PREPARES => false,
 				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 			)
@@ -23,4 +22,3 @@ class PDOConnection {
 	return self::$db_singleton;
 }
 }
-?>

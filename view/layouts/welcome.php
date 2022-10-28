@@ -19,7 +19,7 @@ $view = ViewManager::getInstance();
 
 	<link rel="stylesheet" href="css/login.css" type="text/css">
 	<link rel="stylesheet" href="css/toggleLang.css" type="text/css">
-	
+
 	<?= $view->getFragment("css") ?>
 	<?= $view->getFragment("javascript") ?>
 </head>
@@ -31,8 +31,6 @@ $view = ViewManager::getInstance();
 </html>
 
 <script>
-	/*===== Toogle Idioma =====*/
-
 	const toggleLang = document.getElementById('toggleLang')
 
 	toggleLang.addEventListener('click', function() {
