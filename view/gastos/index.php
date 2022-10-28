@@ -50,18 +50,17 @@ $view->setVariable("title", "Gastos");
                     ?>
                     <form method="POST" action="index.php?controller=gastos&amp;action=delete" id="delete_gasto_<?= $gasto->getId(); ?>" style="display: inline">
 
-                        <input name="id" value="<?= $gasto->getId() ?>">
+                        <input type="hidden" name="id" value="<?= $gasto->getId() ?>">
 
                         <a href="#" onclick="
 				if (confirm('<?= i18n("are you sure?") ?>')) {
-					document.getElementById('delete_post_<?= $gasto->getId() ?>').submit()
+					document.getElementById('delete_gasto_<?= $gasto->getId() ?>').submit()
 				}"><?= i18n("Delete") ?></a>
                     </form>
 
                     &nbsp;
 
                     <?php
-                    // 'Edit Button'
                     ?>
                     <a href="index.php?controller=gastos&amp;action=edit&amp;id=<?= $gasto->getId() ?>"><?= i18n("Edit") ?></a>
 
