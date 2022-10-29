@@ -10,7 +10,7 @@ $currentuser = $view->getVariable("currentusername");
 <head>
 	<title><?= $view->getVariable("title", "no title") ?></title>
 	<meta charset="utf-8">
-	
+
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 	<link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -22,7 +22,19 @@ $currentuser = $view->getVariable("currentusername");
 
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<link rel="stylesheet" href="css/card.css" type="text/css">
+	<link rel="stylesheet" href="css/charts.css" type="text/css">
 	<link rel="stylesheet" href="css/toggleLang.css" type="text/css">
+
+	<!-- highcharts stuff -->
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/series-label.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+	
+	<script src="assets/docready.js"></script>
+	<!--<script src="assets/charts.js"></script>-->
 
 	<script src="index.php?controller=language&amp;action=i18njs">
 	</script>

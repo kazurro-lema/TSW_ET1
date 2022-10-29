@@ -19,7 +19,7 @@ $currentuser = $view->getVariable("currentusername");
 			<div class="nav_list">
 				<a href="index.php?controller=gastos&amp;action=index" class="nav_link active"> <i class='material-icons'>dashboard</i> <span class="nav_name"><?= i18n("Dashboard") ?></span> </a>
 				<a href="index.php?controller=gastos&amp;action=add" class="nav_link"> <i class='material-icons'>note_add</i> <span class="nav_name"><?= i18n("Add") ?></span> </a>
-				<a href="#" class="nav_link"> <i class='material-icons'>analytics</i> <span class="nav_name"><?= i18n("Analiticas") ?></span> </a>
+				<a href="index.php?controller=gastos&amp;action=charts" class="nav_link"> <i class='material-icons'>analytics</i> <span class="nav_name"><?= i18n("Analiticas") ?></span> </a>
 
 			</div>
 		</div>

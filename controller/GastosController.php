@@ -9,74 +9,74 @@ require_once(__DIR__ . "/../controller/BaseController.php");
 
 class GastosController extends BaseController
 {
-    private $gastoMapper;
+	private $gastoMapper;
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->gastoMapper = new GastoMapper();
-    }
-    
-    public function index()
-    {
-        $gastos = $this->gastoMapper->findByAuthor($this->currentUser);
-        $this->view->setVariable("gastos", $gastos);
-        $this->view->render("gastos", "index");
-    }
+	public function __construct()
+	{
+		parent::__construct();
+		$this->gastoMapper = new GastoMapper();
+	}
 
-    public function view()
-    {
-        if (!isset($_GET["id"])) {
-            throw new Exception("Id is mandatory");
-        }
+	public function index()
+	{
+		$gastos = $this->gastoMapper->findByAuthor($this->currentUser);
+		$this->view->setVariable("gastos", $gastos);
+		$this->view->render("gastos", "index");
+	}
 
-        $gastoid = $_REQUEST["id"];
+	public function view()
+	{
+		if (!isset($_GET["id"])) {
+			throw new Exception("Id is mandatory");
+		}
+
+		$gastoid = $_REQUEST["id"];
 		$gasto = $this->gastoMapper->findById($gastoid);
 
-        $this->view->setVariable("gasto", $gasto);
-        
-        $this->view->render("gastos", "view");
-    }
+		$this->view->setVariable("gasto", $gasto);
 
-    public function add()
-    {
-        if (!isset($this->currentUser)) {
-            throw new Exception("Not in session. Adding gastos requires login");
-        }
+		$this->view->render("gastos", "view");
+	}
 
-        $gasto = new Gasto();
+	public function add()
+	{
+		if (!isset($this->currentUser)) {
+			throw new Exception("Not in session. Adding gastos requires login");
+		}
 
-        if (isset($_POST["submit"])) {
-            $gasto->setNombreGasto($_POST["nombre_gasto"]);
-            $gasto->setCantidadGasto($_POST["cantidad_gasto"]);
-            $gasto->setTipo($_POST["tipo"]);
-            $gasto->setEntidad($_POST["entidad"]);
-            $gasto->setFecha($_POST["fecha"]);
-            $gasto->setDescripcion($_POST["descripcion"]);
-            $gasto->setFichero($_POST["fichero"]);
-            $gasto->setAuthor($this->currentUser);
+		$gasto = new Gasto();
 
-            try {
-                $gasto->checkIsValidForCreate();
+		if (isset($_POST["submit"])) {
+			$gasto->setNombreGasto($_POST["nombre_gasto"]);
+			$gasto->setCantidadGasto($_POST["cantidad_gasto"]);
+			$gasto->setTipo($_POST["tipo"]);
+			$gasto->setEntidad($_POST["entidad"]);
+			$gasto->setFecha($_POST["fecha"]);
+			$gasto->setDescripcion($_POST["descripcion"]);
+			$gasto->setFichero($_POST["fichero"]);
+			$gasto->setAuthor($this->currentUser);
 
-                $this->gastoMapper->save($gasto);
+			try {
+				$gasto->checkIsValidForCreate();
 
-                $this->view->setFlash(sprintf(i18n("Gastos \"%s\" successfully added."), $gasto->getNombreGasto()));
+				$this->gastoMapper->save($gasto);
 
-                $this->view->redirect("gastos", "index");
-            } catch (ValidationException $ex) {
-                $errors = $ex->getErrors();
-                $this->view->setVariable("errors", $errors);
-            }
-        }
+				$this->view->setFlash(sprintf(i18n("Gastos \"%s\" successfully added."), $gasto->getNombreGasto()));
 
-        $this->view->setVariable("gasto", $gasto);
-        $this->view->render("gastos", "add");
-    }
+				$this->view->redirect("gastos", "index");
+			} catch (ValidationException $ex) {
+				$errors = $ex->getErrors();
+				$this->view->setVariable("errors", $errors);
+			}
+		}
 
-    public function edit()
-    {
-        if (!isset($_REQUEST["id"])) {
+		$this->view->setVariable("gasto", $gasto);
+		$this->view->render("gastos", "add");
+	}
+
+	public function edit()
+	{
+		if (!isset($_REQUEST["id"])) {
 			throw new Exception("A gasto id is mandatory");
 		}
 
@@ -87,57 +87,57 @@ class GastosController extends BaseController
 		$gastoid = $_REQUEST["id"];
 		$gasto = $this->gastoMapper->findById($gastoid);
 
-        if ($gasto == NULL) {
-			throw new Exception("no such gasto with id: ".$gastoid);
+		if ($gasto == NULL) {
+			throw new Exception("no such gasto with id: " . $gastoid);
 		}
 
 		if ($gasto->getAuthor() != $this->currentUser) {
-			throw new Exception("logged user is not the author of the gasto id ".$gastoid);
+			throw new Exception("logged user is not the author of the gasto id " . $gastoid);
 		}
 
-        if (isset($_POST["submit"])) { 
+		if (isset($_POST["submit"])) {
 
 			$gasto->setNombreGasto($_POST["nombre_gasto"]);
-            $gasto->setCantidadGasto($_POST["cantidad_gasto"]);
-            $gasto->setTipo($_POST["tipo"]);
-            $gasto->setEntidad($_POST["entidad"]);
-            $gasto->setFecha($_POST["fecha"]);
-            $gasto->setDescripcion($_POST["descripcion"]);
-            $gasto->setFichero($_POST["fichero"]);
-            $gasto->setAuthor($this->currentUser);
+			$gasto->setCantidadGasto($_POST["cantidad_gasto"]);
+			$gasto->setTipo($_POST["tipo"]);
+			$gasto->setEntidad($_POST["entidad"]);
+			$gasto->setFecha($_POST["fecha"]);
+			$gasto->setDescripcion($_POST["descripcion"]);
+			$gasto->setFichero($_POST["fichero"]);
+			$gasto->setAuthor($this->currentUser);
 
 			try {
-				$gasto->checkIsValidForUpdate(); 
+				$gasto->checkIsValidForUpdate();
 				$this->gastoMapper->update($gasto);
 
-				$this->view->setFlash(sprintf(i18n("Gastos \"%s\" successfully updated."), $gasto ->getNombreGasto()));
+				$this->view->setFlash(sprintf(i18n("Gastos \"%s\" successfully updated."), $gasto->getNombreGasto()));
 
 				$this->view->redirect("gastos", "index");
-
-			}catch(ValidationException $ex) {
+			} catch (ValidationException $ex) {
 				$errors = $ex->getErrors();
 				$this->view->setVariable("errors", $errors);
 			}
 		}
 
-        $this->view->setVariable("gasto", $gasto);
+		$this->view->setVariable("gasto", $gasto);
 
 		$this->view->render("gastos", "edit");
-    }
+	}
 
-    public function delete() {
+	public function delete()
+	{
 		if (!isset($_POST["id"])) {
 			throw new Exception("id is mandatory");
 		}
 		if (!isset($this->currentUser)) {
 			throw new Exception("Not in session. Editing gastos requires login");
 		}
-		
+
 		$gastoid = $_REQUEST["id"];
 		$gasto = $this->gastoMapper->findById($gastoid);
 
 		if ($gasto == NULL) {
-			throw new Exception("no such gasto with id: ".$gastoid);
+			throw new Exception("no such gasto with id: " . $gastoid);
 		}
 
 		if ($gasto->getAuthor() != $this->currentUser) {
@@ -146,9 +146,15 @@ class GastosController extends BaseController
 
 		$this->gastoMapper->delete($gasto);
 
-		$this->view->setFlash(sprintf(i18n("Gasto \"%s\" successfully deleted."), $gasto ->getNombreGasto()));
+		$this->view->setFlash(sprintf(i18n("Gasto \"%s\" successfully deleted."), $gasto->getNombreGasto()));
 
 		$this->view->redirect("gastos", "index");
+	}
 
+	public function charts()
+	{
+		$gastos = $this->gastoMapper->findAll();
+		$this->view->setVariable("gastos", $gastos);
+		$this->view->render("gastos", "charts");
 	}
 }
