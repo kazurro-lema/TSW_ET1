@@ -14,7 +14,7 @@ $view->setVariable("title", "Add Gasto");
     <?= i18n("nombre_gasto") ?>: <input type="text" name="nombre_gasto" value="<?= isset($_POST["nombre_gasto"]) ? $_POST["nombre_gasto"] : $gasto->getNombreGasto() ?>">
     <?= isset($errors["nombre_gasto"]) ? i18n($errors["nombre_gasto"]) : "" ?><br>
 
-    <?= i18n("cantidad_gasto") ?>:<input type="text" name="cantidad_gasto" value="<?= isset($_POST[(int)("cantidad_gasto")]) ? $_POST[(int)("cantidad_gasto")] : $gasto->getCantidadGasto() ?>">
+    <?= i18n("cantidad_gasto") ?>:<input type="text" name="cantidad_gasto" value="<?= isset($_POST["cantidad_gasto"]) ? $_POST["cantidad_gasto"] : $gasto->getCantidadGasto() ?>">
     <?= isset($errors["cantidad_gasto"]) ? i18n($errors["cantidad_gasto"]) : "" ?><br>
 
     <?= i18n("tipo") ?><select name="tipo" selected value="<?= $gasto->getTipo() ?>">
