@@ -127,35 +127,14 @@ textarea:focus-visible {
 
 .submit-button {
 	color: #004b7a;
+	background: transparent;
 	height: 35px;
 	line-height: 27px;
-	border: 2px solid !important;
 	font-weight: 600 !important;
 	font-family: "Roboto-Bold", "Helvetica Neue", sans-serif !important;
 	text-transform: uppercase;
-	background: transparent;
-	box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 0px 0px rgb(0 0 0 / 14%), 0px 0px 0px 0px rgb(0 0 0 / 12%);
-
-	box-sizing: border-box;
-	position: relative;
-	-webkit-user-select: none;
-	user-select: none;
-	cursor: pointer;
-	outline: none;
-	border: none;
-	-webkit-tap-highlight-color: transparent;
-	display: inline-block;
-	white-space: nowrap;
-	text-decoration: none;
-	vertical-align: baseline;
-	text-align: center;
-	margin: 0;
-	min-width: 64px;
-	line-height: 36px;
 	padding: 0 16px;
+	border: 2px solid !important;
 	border-radius: 4px;
-	overflow: visible;
-	border: 1px solid currentColor;
-	padding: 0 15px;
-	line-height: 34px;
+	box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 0px 0px rgb(0 0 0 / 14%), 0px 0px 0px 0px rgb(0 0 0 / 12%);
 }
