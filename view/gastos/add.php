@@ -69,16 +69,3 @@ $view->setVariable("title", "Add Gasto");
 		</card-fieldset>
 	</mat-card>
 </card-form>
-
-<script>
-	var focusInput = function() {
-		this.parentElement.children[1].className = "label active";
-		this.parentElement.children[0].className = this.parentElement.children[0].className.replace("error", "");
-	};
-
-	for (var i = 0; i < elementos.length; i++) {
-		if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password") {
-			elementos[i].addEventListener("focus", focusInput);
-		}
-	}
-</script>
