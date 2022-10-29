@@ -11,13 +11,13 @@ $view->setVariable("title", "Gastos");
 ?><h1><?= i18n("Gastos") ?></h1>
 <table border="1">
     <tr>
-        <th><?= i18n("Nombre_gasto") ?></th>
-        <th><?= i18n("Cantidad_gasto") ?></th>
-        <th><?= i18n("Tipo") ?></th>
-        <th><?= i18n("Entidad") ?></th>
-        <th><?= i18n("Fecha") ?></th>
-        <th><?= i18n("Descripcion") ?></th>
-        <th><?= i18n("Fichero") ?></th>
+        <th><?= i18n("nombre_gasto") ?></th>
+        <th><?= i18n("cantidad_gasto") ?></th>
+        <th><?= i18n("tipo") ?></th>
+        <th><?= i18n("entidad") ?></th>
+        <th><?= i18n("fecha") ?></th>
+        <th><?= i18n("descripcion") ?></th>
+        <th><?= i18n("fichero") ?></th>
     </tr>
 
     <?php foreach ($gastos as $gasto) : ?>

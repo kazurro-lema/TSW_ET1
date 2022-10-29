@@ -12,7 +12,7 @@ array(
 	"fichero" => "Fichero",
 	"Add" => "Añadir",
 	"Modify gasto" => "Modificar gasto",
-	"Modify" => "Modificar",
+	"Edit" => "Editar",
 	"Gastos" => "Gastos",
 	"are you sure?" => "¿Estas seguro?",
 	"Delete" => "Eliminar",
