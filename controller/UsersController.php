@@ -85,6 +85,7 @@ class UsersController extends BaseController
 
 	public function view()
 	{
+		$this->view->setLayout("default");
 		$usernames = $_SESSION["currentuser"];
 		$user = $this->userMapper->findByName($usernames);
 
@@ -95,6 +96,7 @@ class UsersController extends BaseController
 
 	public function delete()
 	{
+		
 		$usernames = $_SESSION["currentuser"];
 		$user = $this->userMapper->findByName($usernames);
 
