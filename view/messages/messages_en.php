@@ -25,6 +25,7 @@ $i18n_messages = array(
 	"Register" => "Register",
     "Gastos \"%s\" successfully added." => "Bill \"%s\" successfully added.",
 	"Gastos \"%s\" successfully updated." => "Bills \"%s\" successfully updated.",
-	"Gasto \"%s\" successfully deleted." => "Bill \"%s\" successfully deleted."
+	"Gasto \"%s\" successfully deleted." => "Bill \"%s\" successfully deleted.",
+	"Put_Email" => "Put email"
 )
 ?>

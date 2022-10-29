@@ -23,6 +23,7 @@ array(
 	"Register" => "Registrar",
 	"Gastos \"%s\" successfully added." => "Gasto \"%s\" añadido satisfactoriamente.",
 	"Gastos \"%s\" successfully updated." => "Gastos \"%s\" modificados satisfactoriamente.",
-	"Gasto \"%s\" successfully deleted." => "Gasto \"%s\" eliminado satisfactoriamente."
+	"Gasto \"%s\" successfully deleted." => "Gasto \"%s\" eliminado satisfactoriamente.",
+	"Put_Email" => "Introduzca email"
 )
 ?>

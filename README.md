@@ -48,10 +48,11 @@ The action-based (or push) MVC frameworks can be seen as in the following figure
 # Database creation script
 Connect to MySQL console and paste this script.
 ```sql
-create database gestionDeGastos;
+create database gestiondegastos;
 use gestionDeGastos;
 create table users (
 		username varchar(255),
+		email varchar(255),
 		passwd varchar(255),
 		primary key (username)
 ) ENGINE=INNODB DEFAULT CHARACTER SET = utf8;

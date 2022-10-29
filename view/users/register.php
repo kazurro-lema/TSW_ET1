@@ -32,6 +32,9 @@ $view->setVariable("title", "Register");
 					<form id="kc-login-form" action="index.php?controller=users&amp;action=register" method="POST">
 						<div class="inputs-container">
 							<div class="input-content">
+								<input tabindex="1" id="email" class="input user" name="email" placeholder="<?= i18n("Put_Email") ?>" value="" type="text" autofocus="" autocomplete="off">
+							</div>
+							<div class="input-content">
 								<input tabindex="1" id="username" class="input user" name="username" placeholder="<?= i18n("Put_Username") ?>" value="" type="text" autofocus="" autocomplete="off">
 							</div>
 							<div class="input-content">
