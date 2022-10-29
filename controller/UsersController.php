@@ -24,7 +24,7 @@ class UsersController extends BaseController
 	public function login()
 	{
 		if (isset($_POST["username"])) {
-			if ($this->userMapper->isValidUser($_POST["username"], 							 $_POST["passwd"])) {
+			if ($this->userMapper->isValidUser($_POST["username"], $_POST["passwd"])) {
 
 				$_SESSION["currentuser"] = $_POST["username"];
 
@@ -42,24 +42,27 @@ class UsersController extends BaseController
 	{
 
 		$user = new User();
+		$this->view->setFlash("Username ");
 
 		if (isset($_POST["username"])) {
 			$user->setUsername($_POST["username"]);
 			$user->setPassword($_POST["passwd"]);
+			$this->view->setFlash(" Please login now");
 
 			try {
 				$user->checkIsValidForRegister();
 
-				if (!$this->userMapper->usernameExists($_POST["username"])) {
+				if (!($this->userMapper->usernameExists($user->getUsername()))) {
 
 					$this->userMapper->save($user);
 
-					$this->view->setFlash("Username " . $user->getUsername() . " successfully added. Please login now");
+					$this->view->setFlash("Username successfully added. Please login now");
 
 					$this->view->redirect("users", "login");
+					
 				} else {
 					$errors = array();
-					$errors["username"] = "Username already exists";
+					$errors["general"] = "Username already exists";
 					$this->view->setVariable("errors", $errors);
 				}
 			} catch (ValidationException $ex) {

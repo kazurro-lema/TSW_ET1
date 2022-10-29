@@ -105,7 +105,7 @@ class GastosController extends BaseController
 				$gasto->checkIsValidForUpdate(); 
 				$this->gastoMapper->update($gasto);
 
-				$this->view->setFlash(sprintf(i18n("Gastos \"%s\" successfully updated."),$gasto ->getNombreGasto()));
+				$this->view->setFlash(sprintf(i18n("Gastos \"%s\" successfully updated."), $gasto ->getNombreGasto()));
 
 				$this->view->redirect("gastos", "index");
 
