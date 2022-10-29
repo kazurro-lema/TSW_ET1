@@ -1,3 +1,5 @@
+@import "_google-fonts-roboto.css";
+
 :root {
 	--header-height: 4rem;
 	--header-height-mobile: 3rem;
@@ -28,7 +30,7 @@ card-form .mat-card {
 	position: relative;
 	border-radius: 4px;
 	box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
-	0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+		0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 	background: white;
 	color: rgba(0, 0, 0, 0.87);
 	font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -76,7 +78,17 @@ form-element {
 	padding: 12px 6px;
 }
 
-form-element > input, select, textarea {
+form-element > label {
+	font-weight: 400;
+	line-height: 1.125;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+	letter-spacing: normal;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+form-element > input,
+select,
+textarea {
 	font-size: inherit;
 	font-weight: 400;
 	line-height: 1.125;
@@ -92,11 +104,58 @@ form-element > input, select, textarea {
 	border-top: 0;
 	border-right: 0;
 	border-left: 0;
+	border-bottom-width: 2px;
 }
 
-form-element > input:focus-visible, select:focus-visible, textarea:focus-visible {
+form-element > input,
+select {
+	max-height: 44px;
+}
+
+form-element > input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
 	outline: 0;
 	border-color: var(--first-color);
 }
 
+.form-button-panel {
+	padding: 12px;
+	width: 100%;
+	text-align: right;
+}
 
+.submit-button {
+	color: #004b7a;
+	height: 35px;
+	line-height: 27px;
+	border: 2px solid !important;
+	font-weight: 600 !important;
+	font-family: "Roboto-Bold", "Helvetica Neue", sans-serif !important;
+	text-transform: uppercase;
+	background: transparent;
+	box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 0px 0px rgb(0 0 0 / 14%), 0px 0px 0px 0px rgb(0 0 0 / 12%);
+
+	box-sizing: border-box;
+	position: relative;
+	-webkit-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	-webkit-tap-highlight-color: transparent;
+	display: inline-block;
+	white-space: nowrap;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-align: center;
+	margin: 0;
+	min-width: 64px;
+	line-height: 36px;
+	padding: 0 16px;
+	border-radius: 4px;
+	overflow: visible;
+	border: 1px solid currentColor;
+	padding: 0 15px;
+	line-height: 34px;
+}
