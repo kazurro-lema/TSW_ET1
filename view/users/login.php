@@ -40,7 +40,7 @@ if (isset($errors["general"])) {
 					<form id="kc-login-form" action="index.php?controller=users&amp;action=login" method="POST">
 						<div class="inputs-container">
 							<div class="input-content">
-								<input tabindex="1" id="username" class="input user" name="username" placeholder="<?= i18n("Put_Username") ?>" value="" type="text" autofocus="" autocomplete="off">
+								<input tabindex="1" id="username" class="input username" name="username" placeholder="<?= i18n("Put_Username") ?>" value="" type="text" autofocus="" autocomplete="off">
 							</div>
 							<div class="input-content">
 								<input tabindex="2" id="password" class="input pw" name="passwd" placeholder="<?= i18n("Put_Password") ?>" type="password" autocomplete="off">

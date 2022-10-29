@@ -27,10 +27,10 @@ class UserMapper
 		}
 	}
 
-	public function isValidUser($email, $username, $passwd)
+	public function isValidUser($username, $passwd)
 	{
-		$stmt = $this->db->prepare("SELECT count(username) FROM users where username=? and email=? and passwd=?");
-		$stmt->execute(array($email, $username, $passwd));
+		$stmt = $this->db->prepare("SELECT count(username) FROM users where username=? and passwd=?");
+		$stmt->execute(array($username, $passwd));
 
 		if ($stmt->fetchColumn() > 0) {
 			return true;

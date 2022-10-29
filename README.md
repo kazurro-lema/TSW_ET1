@@ -52,7 +52,7 @@ create database gestiondegastos;
 use gestionDeGastos;
 create table users (
 		username varchar(255),
-		email varchar(255),
+		email varchar(255) not null,
 		passwd varchar(255),
 		primary key (username)
 ) ENGINE=INNODB DEFAULT CHARACTER SET = utf8;

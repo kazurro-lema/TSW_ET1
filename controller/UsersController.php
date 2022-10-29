@@ -24,7 +24,7 @@ class UsersController extends BaseController
 	public function login()
 	{
 		if (isset($_POST["username"])) {
-			if ($this->userMapper->isValidUser($_POST["email"], $_POST["username"], $_POST["passwd"])) {
+			if ($this->userMapper->isValidUser($_POST["username"], $_POST["passwd"])) {
 
 				$_SESSION["currentuser"] = $_POST["username"];
 
@@ -37,6 +37,7 @@ class UsersController extends BaseController
 		}
 		$this->view->render("users", "login");
 	}
+
 
 	public function register()
 	{
