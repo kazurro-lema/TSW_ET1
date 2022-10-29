@@ -14,7 +14,6 @@ if (isset($errors["general"])) {
 }
 
 ?>
-<h1><?= i18n("Login") ?></h1>
 <div class="login-page">
 	<div class="login-header">
 		<div class="bc-logo">
@@ -30,7 +29,7 @@ if (isset($errors["general"])) {
 		<div class="bc-flex-container">
 			<div class="bc-msg">
 				<h1 class="title">
-					<span class="hide-on-mobile">Aquí ponemos cosinhas </span>
+					<span class="hide-on-mobile"><?= i18n("Login") ?></span>
 				</h1>
 				<h2 class="subtitle">a</h2>
 			</div>

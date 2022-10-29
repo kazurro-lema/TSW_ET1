@@ -22,7 +22,10 @@ $currentuser = $view->getVariable("currentusername");
 				<a href="#" class="nav_link"> <i class='material-icons'>analytics</i> <span class="nav_name"><?= i18n("Analiticas") ?></span> </a>
 			</div>
 		</div>
-		<a class="nav_link"> <i class='material-icons'>power_settings_new</i> <span class="nav_name"></span></a>
-		<a href="index.php?controller=users&amp;action=logout" class="nav_link"> <i class='material-icons'>power_settings_new</i> <span class="nav_name">SignOut</span> </a>
+		<div>
+			<a class="nav_link"> <i class='material-icons'>person</i> <span class="nav_name"></span></a>
+			<a href="index.php?controller=users&amp;action=logout" class="nav_link"> <i class='material-icons'>power_settings_new</i> <span class="nav_name">SignOut</span> </a>
+		</div>
+
 	</nav>
 </div>

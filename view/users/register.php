@@ -6,7 +6,16 @@ $errors = $view->getVariable("errors");
 $user = $view->getVariable("user");
 $view->setVariable("title", "Register");
 ?>
-<h1><?= i18n("Register") ?></h1>
+
+<?php
+
+if (isset($errors["general"])) {
+	$x = $errors['general'];
+	echo "<script type='text/javascript'>alert('$x')</script>";
+}
+
+?>
+
 <div class="login-page">
 	<div class="login-header">
 		<div class="bc-logo">
@@ -22,7 +31,7 @@ $view->setVariable("title", "Register");
 		<div class="bc-flex-container">
 			<div class="bc-msg">
 				<h1 class="title">
-					<span class="hide-on-mobile">Registrate</span>
+					<span class="hide-on-mobile"><?= i18n("Register") ?></span>
 				</h1>
 			</div>
 			<div class="login-form">
