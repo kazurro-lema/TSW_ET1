@@ -54,9 +54,9 @@ $view->setVariable("title", "Gastos");
                         <input type="hidden" name="id" value="<?= $gasto->getId() ?>">
 
                         <a href="#" onclick="
-				if (confirm('<?= i18n("are you sure?") ?>')) {
-					document.getElementById('delete_gasto_<?= $gasto->getId() ?>').submit()
-				}"><?= i18n("Delete") ?></a>
+				                            if (confirm('<?= i18n("are you sure?") ?>')) {
+					                                document.getElementById('delete_gasto_<?= $gasto->getId() ?>').submit()
+				                            }"><?= i18n("Delete") ?></a>
                     </form>
 
                     &nbsp;

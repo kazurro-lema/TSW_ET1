@@ -30,6 +30,11 @@ class GastosController extends BaseController
             throw new Exception("Id is mandatory");
         }
 
+        $gastoid = $_REQUEST["id"];
+		$gasto = $this->gastoMapper->findById($gastoid);
+
+        $this->view->setVariable("gasto", $gasto);
+        
         $this->view->render("gastos", "view");
     }
 
@@ -141,7 +146,7 @@ class GastosController extends BaseController
 
 		$this->gastoMapper->delete($gasto);
 
-		$this->view->setFlash(sprintf(i18n("Gasto \"%s\" successfully deleted."),$gasto ->getNombreGasto()));
+		$this->view->setFlash(sprintf(i18n("Gasto \"%s\" successfully deleted."), $gasto ->getNombreGasto()));
 
 		$this->view->redirect("gastos", "index");
 

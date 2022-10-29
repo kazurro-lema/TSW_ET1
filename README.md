@@ -69,7 +69,7 @@ create table gastos (
 	author varchar(255) not null,
 
 	primary key(id),
-	foreign key (author) references users(username) 
+	foreign key (author) references users(username) on delete cascade
 ) ENGINE=INNODB DEFAULT CHARACTER SET = utf8;
 
 ```

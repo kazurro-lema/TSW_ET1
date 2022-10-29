@@ -31,7 +31,7 @@ if (isset($errors["general"])) {
 				<h1 class="title">
 					<span class="hide-on-mobile"><?= i18n("Login") ?></span>
 				</h1>
-				<h2 class="subtitle">a</h2>
+				<h2 class="subtitle"></h2>
 			</div>
 			<div class="login-form">
 				<h4 class="form-header"></h4>

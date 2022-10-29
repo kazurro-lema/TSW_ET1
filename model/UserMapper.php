@@ -36,4 +36,26 @@ class UserMapper
 			return true;
 		}
 	}
+
+	public function findByName($username)
+    {
+        $stmt = $this->db->prepare("SELECT * FROM users WHERE username=?");
+        $stmt->execute(array($username));
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user != null) {
+            return new User(
+                $user["username"],
+                $user["email"],
+                $user["passwd"]
+            );
+        } else {
+            return null;
+        }
+    }
+
+	public function delete(User $user) {
+        $stmt = $this->db->prepare("DELETE from users WHERE username=?");
+        $stmt->execute(array($user->getUsername()));
+    }
 }

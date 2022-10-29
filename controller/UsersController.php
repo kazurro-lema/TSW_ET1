@@ -61,7 +61,6 @@ class UsersController extends BaseController
 					$this->view->setFlash("Username successfully added. Please login now");
 
 					$this->view->redirect("users", "login");
-					
 				} else {
 					$errors = array();
 					$errors["general"] = "Username already exists";
@@ -81,6 +80,25 @@ class UsersController extends BaseController
 	public function logout()
 	{
 		session_destroy();
+		$this->view->redirect("users", "login");
+	}
+
+	public function view()
+	{
+		$usernames = $_SESSION["currentuser"];
+		$user = $this->userMapper->findByName($usernames);
+
+		$this->view->setVariable("currentuser", $user);
+
+		$this->view->render("users", "view");
+	}
+
+	public function delete()
+	{
+		$usernames = $_SESSION["currentuser"];
+		$user = $this->userMapper->findByName($usernames);
+
+		$this->userMapper->delete($user);
 		$this->view->redirect("users", "login");
 	}
 }
