@@ -21,8 +21,6 @@ $view->setVariable("title", "Gastos");
     </tr>
 
     <?php foreach ($gastos as $gasto) : ?>
-        <?php
-        if (isset($currentuser) && $currentuser == $gasto->getAuthor()->getUsername()) : ?>
             <tr>
                 <td>
                     <a href="index.php?controller=gastos&amp;action=view&amp;id=<?= $gasto->getId() ?>"><?= htmlentities($gasto->getNombreGasto()) ?></a>
@@ -68,6 +66,5 @@ $view->setVariable("title", "Gastos");
 
                 </td>
             </tr>
-        <?php endif; ?>
     <?php endforeach; ?>
 </table>

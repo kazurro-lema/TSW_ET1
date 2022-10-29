@@ -16,10 +16,10 @@ class GastosController extends BaseController
         parent::__construct();
         $this->gastoMapper = new GastoMapper();
     }
-
+    
     public function index()
     {
-        $gastos = $this->gastoMapper->findAll();
+        $gastos = $this->gastoMapper->findByAuthor($this->currentUser);
         $this->view->setVariable("gastos", $gastos);
         $this->view->render("gastos", "index");
     }
