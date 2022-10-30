@@ -31,6 +31,8 @@ $i18n_messages = array(
 	"Filter" => "Filter",
 	"username" => "Username",
 	"email" => "Email",
-	"password" => "Password"
+	"password" => "Password",
+	"Recordar Usuario y Contraseña" => "Remember user and password?",
+	"Not user?" => "Not user?"
 )
 ?>
