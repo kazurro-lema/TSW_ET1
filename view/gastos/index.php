@@ -17,9 +17,9 @@ $view->setVariable("title", "Gastos");
 			<button class="mat-icon-button btnOpenActions menu-actions">
 				<form method="POST" action="index.php?controller=gastos&amp;action=descarga" id="descarga_gasto" style="display: inline">
 					<a href="#" onclick="
-										if (confirm('<?= i18n("are you sure?") ?>')) {
+										
 														document.getElementById('descarga_gasto').submit()
-										}">
+										">
 						<span class="mat-button-wrapper">
 							<mat-icon class="material-icons">file_download</mat-icon>
 						</span>
