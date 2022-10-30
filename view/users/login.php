@@ -26,9 +26,9 @@ if (isset($errors["general"])) {
 		<div class="bc-flex-container">
 			<div class="bc-msg">
 				<h1 class="title">
-					<span class="hide-on-mobile"><?= i18n("Login") ?></span>
+					<span><?= i18n("Company") ?></span>
 				</h1>
-				<h2 class="subtitle"></h2>
+				<h2 class="subtitle"><?= i18n("Login") ?></h2>
 			</div>
 			<div class="login-form">
 				<h4 class="form-header"></h4>
@@ -46,10 +46,10 @@ if (isset($errors["general"])) {
 								<input tabindex="4" class="submit" name="login" id="kc-login" type="submit" value="<?= i18n("Login") ?>">
 							</div>
 						</div>
-						<div>
-							<input type="checkbox" name="chk_rec" value="chk_rec"> <?= i18n("Recordar Usuario y Contraseña") ?>
-						</div>
 						<div class="bc-form-options">
+							<div>
+								<input type="checkbox" name="chk_rec" value="chk_rec"> <?= i18n("Recordar Usuario y Contraseña") ?>
+							</div>
 							<span class="register">
 								<?= i18n("Not user?") ?> <a href="index.php?controller=users&amp;action=register"><?= i18n("Register here!") ?></a>
 							</span>

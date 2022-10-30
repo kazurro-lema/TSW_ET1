@@ -2,6 +2,7 @@
 //file: /view/messages/messages_es.php
 $i18n_messages =
 array(
+	"Company" => "Gestión de Gastos",
 	"Create gasto" => "Crear gasto",
 	"nombre_gasto" => "Nombre gasto",
 	"cantidad_gasto" => "Cantidad (€)",
