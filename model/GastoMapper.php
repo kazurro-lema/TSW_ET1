@@ -91,7 +91,7 @@ class GastoMapper
 		return $gastos;
 	}
 
-	public function findByAuthorFiltered($gastoAuthor, $fechaIni = null, $fechaFin = null)
+	public function findByAuthorFiltered($gastoAuthor, $tipo = null, $fechaIni = null, $fechaFin = null)
 	{
 		$filtros = '';
 
@@ -101,6 +101,12 @@ class GastoMapper
 
 		if (isset($fechaFin) && !empty($fechaFin)) {
 			$filtros = $filtros . "fecha <= '" . $fechaFin . "' and ";
+		}
+
+		if (isset($tipo) && !empty($tipo)) {
+
+			$list = implode(', ', $tipo);
+			$filtros = $filtros . "tipo in('" . $list . "') and ";
 		}
 
 		$stmt = $this->db->query("SELECT * FROM gastos, users WHERE $filtros users.username = gastos.author ORDER BY fecha DESC");

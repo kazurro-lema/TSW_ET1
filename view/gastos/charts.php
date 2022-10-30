@@ -15,15 +15,15 @@ $view->setVariable("title", "Gastos");
 <card-form>
 	<mat-card class="mat-card">
 		<mat-card-header class="mat-card-header card-title" id="filterDropDown">
-			<?= i18n("Analitica") ?>
+			<?= i18n("Charts") ?>
 			<mat-icon class='material-icons material-symbols-outlined'>unfold_more</mat-icon>
 		</mat-card-header>
 		<card-fieldset id="filter">
 			<form action="index.php?controller=gastos&amp;action=charts" method="POST">
 				<section>
 				<form-element style="flex: 1 1 100%;">
-						<label class="label" for="nombre"><?= i18n("tipo") ?></label>
-						<select name="tipo" selected required>
+						<label class="label"><?= i18n("tipo") ?></label>
+						<select name="tipo[]" multiple>
 							<option value="alimentacion">Alimentacion</option>
 							<option value="ocio">Ocio</option>
 							<option value="liquidaciones">Liquidaciones</option>
@@ -32,12 +32,12 @@ $view->setVariable("title", "Gastos");
 					</form-element>
 
 					<form-element style="flex: 1 1 50%;">
-						<label class="label" for="nombre"><?= i18n("FechaIni") ?></label>
+						<label class="label"><?= i18n("FechaIni") ?></label>
 						<input type="date" name="fechaIni" value="<?= isset($_POST["fechaIni"]) ? $_POST["fechaIni"] : $filters->getFechaIni() ?>">
 					</form-element>
 
 					<form-element style="flex: 1 1 50%;">
-						<label class="label" for="nombre"><?= i18n("FechaFin") ?></label>
+						<label class="label"><?= i18n("FechaFin") ?></label>
 						<input type="date" name="fechaFin" value="<?= isset($_POST["fechaFin"]) ? $_POST["fechaFin"] : $filters->getFechaFin() ?>">
 					</form-element>
 
