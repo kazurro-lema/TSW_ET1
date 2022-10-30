@@ -105,8 +105,16 @@ class GastoMapper
 
 		if (isset($tipo) && !empty($tipo)) {
 
-			$list = implode(', ', $tipo);
-			$filtros = $filtros . "tipo in('" . $list . "') and ";
+			$array_num = count($tipo);
+
+			for ($i = 0; $i < $array_num; ++$i) {
+
+				if ($i == ($array_num - 1)) {
+					$filtros = $filtros . "tipo = '" . $tipo[$i] . "' and ";
+				} else {
+					$filtros = $filtros . "tipo = '" . $tipo[$i] . "' or ";
+				}
+			}
 		}
 
 		$stmt = $this->db->query("SELECT * FROM gastos, users WHERE $filtros users.username = gastos.author ORDER BY fecha DESC");
