@@ -29,13 +29,8 @@ $view->setVariable("title", "View Gasto");
 					</form-element>
 
 					<form-element style="flex: 1 1 33.33%;">
-						<label class="label" for="tipo_gasto"><?= i18n("tipo") ?></label>
-						<select name="tipo" selected value="<?= $gasto->getTipo() ?>" disabled>
-							<option value="alimentacion">Alimentacion</option>
-							<option value="ocio">Ocio</option>
-							<option value="liquidaciones">Liquidaciones</option>
-							<option value="pagos">Pagos</option>
-						</select>
+						<label class="label" for="tipo"><?= i18n("tipo") ?></label>
+						<input type="text" name="tipo" value="<?= isset($_POST["tipo"]) ? $_POST["tipo"] : $gasto->getTipo() ?>" disabled>
 					</form-element>
 
 					<form-element style="flex: 1 1 33.33%;">
@@ -55,7 +50,7 @@ $view->setVariable("title", "View Gasto");
 
 					<form-element style="flex: 1 1 50%;">
 						<label class="label" for="fichero"><?= i18n("fichero") ?></label>
-						<input type="file" name="fichero" value="<?= isset($_POST["fichero"]) ? $_POST["fichero"] : $gasto->getFichero() ?>" disabled>
+						<input type="text" name="fichero" value="<?= isset($_POST["fichero"]) ? $_POST["fichero"] : $gasto->getFichero() ?>" disabled>
 					</form-element>
 
 					<div class="form-button-panel">

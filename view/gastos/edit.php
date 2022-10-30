@@ -25,20 +25,25 @@ $view->setVariable("title", "Edit Gasto");
 					</form-element>
 
 					<form-element style="flex: 1 1 33.33%;">
-						<label class="label" for="nombre"><?= i18n("cantidad_gasto") ?></label>
+						<label class="label" for="nombre"><?= i18n("cantidad_gasto") ?> </label>
 						<input type="text" name="cantidad_gasto" value="<?= isset($_POST["cantidad_gasto"]) ? $_POST["cantidad_gasto"] : $gasto->getCantidadGasto() ?>" required>
 						<?= isset($errors["cantidad_gasto"]) ? i18n($errors["cantidad_gasto"]) : "" ?>
 					</form-element>
 
 					<form-element style="flex: 1 1 33.33%;">
-						<label class="label" for="nombre"><?= i18n("tipo") ?></label>
-						<select name="tipo" selected value="<?= $gasto->getTipo() ?>" required>
+						<label class="label" for="nombre"></label>
+						<select id="tipo" name="tipo" value="<?= $gasto->getTipo() ?>" required>
 							<option value="alimentacion">Alimentacion</option>
 							<option value="ocio">Ocio</option>
 							<option value="liquidaciones">Liquidaciones</option>
 							<option value="pagos">Pagos</option>
 						</select>
 					</form-element>
+
+					<script>
+						let selectType = document.getElementById("tipo");
+						selectType.value = '<?= $gasto->getTipo() ?>';
+					</script>
 
 					<form-element style="flex: 1 1 33.33%;">
 						<label class="label" for="nombre"><?= i18n("entidad") ?></label>
