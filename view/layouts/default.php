@@ -19,12 +19,13 @@ $currentuser = $view->getVariable("currentusername");
 
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/sidenav.css" type="text/css">
 	<link rel="stylesheet" href="css/card.css" type="text/css">
 	<link rel="stylesheet" href="css/card-list.css" type="text/css">
 	<link rel="stylesheet" href="css/charts.css" type="text/css">
 	<link rel="stylesheet" href="css/toggleLang.css" type="text/css">
 
-	<!-- highcharts stuff -->
+	<!-- Highcharts stuff -->
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/modules/series-label.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
