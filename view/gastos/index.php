@@ -16,6 +16,10 @@ $view->setVariable("title", "Gastos");
 			<?= i18n("Gastos") ?>
 		</mat-card-header>
 
+		<?php
+			header('Content-Type')
+		?>
+
 		<?php foreach ($gastos as $gasto) : ?>
 
 			<bill-card>
