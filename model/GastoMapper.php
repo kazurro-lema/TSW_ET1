@@ -192,7 +192,7 @@ class GastoMapper
 		$gastos_db = $query->fetchAll(PDO::FETCH_ASSOC);
 
 		header('Content-type: aplication/vnd.ms-excel');
-		header('Content-Disposition: attachement; filename=hioa.csv');
+		header('Content-Disposition: attachement; filename=Gastos.csv');
 		header('Pragma: no-cache');
 		header('Expires: 0');
 		echo "nombre_gasto;cantidad_gasto;tipo;entidad;fecha;descripcion;fichero";

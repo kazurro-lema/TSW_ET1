@@ -60,7 +60,7 @@ create table users (
 create table gastos (
 	id int auto_increment,
 	nombre_gasto varchar(255) not null,
-	cantidad_gasto int not null,
+	cantidad_gasto float not null,
 	tipo varchar (255) not null, 
 	entidad varchar(255),
 	fecha date not null,
