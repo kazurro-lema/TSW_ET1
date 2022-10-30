@@ -170,4 +170,13 @@ class GastosController extends BaseController
 		$this->view->setVariable("gastosOnLast12Months", $gastosOnLast12Months);
 		$this->view->render("gastos", "charts");
 	}
+
+	public function descarga()
+	{
+		header('Content-Type: text/csv; charset=UTF-8');
+		header('Content-Disposition: attachment; filename=data.csv');
+
+		fputcsv()
+	}
 }
+

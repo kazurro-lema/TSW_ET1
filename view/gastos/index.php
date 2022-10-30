@@ -15,14 +15,10 @@ $view->setVariable("title", "Gastos");
 		<mat-card-header class="mat-card-header card-title">
 			<?= i18n("Gastos") ?>
 		</mat-card-header>
-
-		<?php
-			header('Content-Type: text/csv; charset=UTF-8');
-			header('Content-Disposition: attachment; filename=data.csv');
-
-			
-		?>
-
+		<button class="mat-icon-button btnOpenActions menu-actions">
+			<form method="POST" action="index.php?controller=gastos&amp;action=descarga" style="display: inline">			
+			</form>
+		</button>
 		<?php foreach ($gastos as $gasto) : ?>
 
 			<bill-card>
