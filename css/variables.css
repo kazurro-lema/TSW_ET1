@@ -1,0 +1,12 @@
+:root {
+	--header-height: 4rem;
+	--header-height-mobile: 3rem;
+	--nav-width: 68px;
+	--nav-width-expanded: 208px;
+	--first-color: #004b7a;
+	--first-color-light: rgba(0, 0, 0, 0.54);
+	--white-color: #ffffff;
+	--body-font: "Roboto-Light", sans-serif;
+	--normal-font-size: 1rem;
+	--z-fixed: 100;
+}

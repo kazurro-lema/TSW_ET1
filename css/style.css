@@ -1,16 +1,8 @@
 @import "_google-fonts-roboto.css";
+@import "variables.css";
 
-:root {
-	--header-height: 4rem;
-	--header-height-mobile: 3rem;
-	--nav-width: 68px;
-	--nav-width-expanded: 208px;
-	--first-color: #004b7a;
-	--first-color-light: #afa5d9;
-	--white-color: #ffffff;
-	--body-font: "Roboto-Light", sans-serif;
-	--normal-font-size: 1rem;
-	--z-fixed: 100;
+*{
+	font-family: 'Roboto';
 }
 
 html {
@@ -28,6 +20,7 @@ body {
 
 a {
 	text-decoration: none;
+	color: var(--first-color-light);
 }
 
 .header {

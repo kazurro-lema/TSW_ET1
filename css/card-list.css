@@ -1,0 +1,99 @@
+@import "_google-fonts-roboto.css";
+@import "variables.css";
+
+bill-card {
+	width: 100%;
+	cursor: pointer;
+}
+
+.bill-card {
+	flex-direction: row;
+	box-sizing: border-box;
+	display: flex;
+	position: relative;
+	padding: 13px 16px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+mat-avatar {
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+}
+
+mat-avatar mat-icon {
+	width: 40px;
+	height: 40px;
+	font-size: 40px!important;
+	text-align: center;
+	color: var(--first-color-light);
+}
+
+.bill-card .bill-info {
+	align-self: center;
+	margin: 0 16px;
+}
+
+.bill-card .bill-info .bill-proccess span {
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	letter-spacing: 0.15px;
+	color: var(--first-color-light);
+	text-align: left;
+}
+.bill-card .bill-info span {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.bill-card .bill-info .bill-name {
+	word-break: break-word;
+}
+
+.bill-card .bill-actions .bill-actions-content {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.bill-list .custom-card-container .my-bill {
+	color: #004b7a;
+}
+
+.bill-actions {
+	align-self: center;
+	flex: 1 0 auto;
+	box-sizing: border-box;
+}
+
+.bill-actions my-bill-actions {
+	flex-direction: row;
+	box-sizing: border-box;
+	display: flex;
+	place-content: center flex-end;
+	align-items: center;
+}
+
+button.btnOpenActions {
+	color: rgba(0, 0, 0, 0.54);
+}
+
+button.btnOpenActions:hover {
+	color: var(--first-color);
+}
+
+.mat-icon-button {
+	padding: 0;
+	min-width: 0;
+	width: 40px;
+	height: 40px;
+	flex-shrink: 0;
+	line-height: 40px;
+	border-radius: 50%;
+}
+
+button.menu-actions span.mat-button-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

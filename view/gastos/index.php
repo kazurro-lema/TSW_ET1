@@ -8,63 +8,65 @@ $currentuser = $view->getVariable("currentusername");
 
 $view->setVariable("title", "Gastos");
 
-?><h1><?= i18n("Gastos") ?></h1>
-<table border="1">
-    <tr>
-        <th><?= i18n("nombre_gasto") ?></th>
-        <th><?= i18n("cantidad_gasto") ?></th>
-        <th><?= i18n("tipo") ?></th>
-        <th><?= i18n("entidad") ?></th>
-        <th><?= i18n("fecha") ?></th>
-        <th><?= i18n("descripcion") ?></th>
-        <th><?= i18n("fichero") ?></th>
-    </tr>
+?>
 
-    <?php foreach ($gastos as $gasto) : ?>
-            <tr>
-                <td>
-                    <a href="index.php?controller=gastos&amp;action=view&amp;id=<?= $gasto->getId() ?>"><?= htmlentities($gasto->getNombreGasto()) ?></a>
-                </td>
-                <td>
-                    <?= $gasto->getCantidadGasto() ?>
-                </td>
-                <td>
-                    <?= $gasto->getTipo() ?>
-                </td>
-                <td>
-                    <?= $gasto->getEntidad() ?>
-                </td>
-                <td>
-                    <?= $gasto->getFecha() ?>
-                </td>
-                <td>
-                    <?= $gasto->getDescripcion() ?>
-                </td>
-                <td>
-                    <?= $gasto->getFichero() ?>
-                </td>
-                <td>
+<h1><?= i18n("Gastos") ?></h1>
 
-                    <?php
-                    ?>
-                    <form method="POST" action="index.php?controller=gastos&amp;action=delete" id="delete_gasto_<?= $gasto->getId(); ?>" style="display: inline">
+<?php foreach ($gastos as $gasto) : ?>
 
-                        <input type="hidden" name="id" value="<?= $gasto->getId() ?>">
+	<bill-card>
+		<div class="bill-card">
+			<mat-avatar>
+				<mat-icon class="material-icons">payments</mat-icon>
+			</mat-avatar>
 
-                        <a href="#" onclick="
-				                            if (confirm('<?= i18n("are you sure?") ?>')) {
-					                                document.getElementById('delete_gasto_<?= $gasto->getId() ?>').submit()
-				                            }"><?= i18n("Delete") ?></a>
-                    </form>
+			<div class="bill-info">
+				<div class="bill-proccess">
+					<span>
+						<a href="index.php?controller=gastos&amp;action=view&amp;id=<?= $gasto->getId() ?>"><?= htmlentities($gasto->getNombreGasto()) ?></a>
+					</span>
+				</div>
+				<div>
+					<div class="bill-name"><span><?= $gasto->getDescripcion() ?></span></div>
+					<div class="bill-time-info"><span>Bill created: <span><?= $gasto->getFecha() ?></span></span></div>
+				</div>
+			</div>
+			<div class="bill-actions">
+				<div class="bill-actions-content">
+					<div class="my-bill">
+						<my-bill-actions>
+							<button class="mat-icon-button btnOpenActions menu-actions">
+								<a href="index.php?controller=gastos&amp;action=edit&amp;id=<?= $gasto->getId() ?>">
+									<span class="mat-button-wrapper">
+										<mat-icon class="material-icons">edit</mat-icon>
+									</span>
+								</a>
+							</button>
+						</my-bill-actions>
+					</div>
+					<div class="my-bill">
+						<my-bill-actions>
+							<button class="mat-icon-button btnOpenActions menu-actions">
+								<span class="mat-button-wrapper">
+									<mat-icon class="material-icons">delete</mat-icon>
+								</span>
+							</button>
+						</my-bill-actions>
+					</div>
+				</div>
+			</div>
+		</div>
+	</bill-card>
+	
+	<button class="submit-button">
+		<form method="POST" action="index.php?controller=gastos&amp;action=delete" id="delete_gasto_<?= $gasto->getId(); ?>" style="display: inline">
 
-                    &nbsp;
+			<input type="hidden" name="id" value="<?= $gasto->getId() ?>">
+			<a href="#" onclick="
+                    if (confirm('<?= i18n("are you sure?") ?>')) {
+                            document.getElementById('delete_gasto_<?= $gasto->getId() ?>').submit()
+                    }"><?= i18n("Delete") ?></a>
+		</form>
+	</button>
 
-                    <?php
-                    ?>
-                    <a href="index.php?controller=gastos&amp;action=edit&amp;id=<?= $gasto->getId() ?>"><?= i18n("Edit") ?></a>
-
-
-                </td>
-            </tr>
-    <?php endforeach; ?>
-</table>
+<?php endforeach; ?>

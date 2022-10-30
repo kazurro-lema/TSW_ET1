@@ -22,6 +22,7 @@ $currentuser = $view->getVariable("currentusername");
 
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<link rel="stylesheet" href="css/card.css" type="text/css">
+	<link rel="stylesheet" href="css/card-list.css" type="text/css">
 	<link rel="stylesheet" href="css/charts.css" type="text/css">
 	<link rel="stylesheet" href="css/toggleLang.css" type="text/css">
 
