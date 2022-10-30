@@ -18,7 +18,6 @@ $currentuser = $view->getVariable("currentusername");
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
 	<!-- Custom CSS -->
-
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<link rel="stylesheet" href="css/card.css" type="text/css">
 	<link rel="stylesheet" href="css/card-list.css" type="text/css">
@@ -31,13 +30,10 @@ $currentuser = $view->getVariable("currentusername");
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
-	
 	<script src="assets/docready.js"></script>
-	<!--<script src="assets/charts.js"></script>-->
 
-	<script src="index.php?controller=language&amp;action=i18njs">
-	</script>
+	<script src="index.php?controller=language&amp;action=i18njs"></script>
+
 	<?= $view->getFragment("css") ?>
 	<?= $view->getFragment("javascript") ?>
 </head>
