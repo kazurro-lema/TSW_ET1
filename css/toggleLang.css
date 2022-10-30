@@ -1,3 +1,6 @@
+@import "_google-fonts-roboto.css";
+@import "variables.css";
+
 toggle-language {
 	display: flex;
 	flex-direction: row;
@@ -16,7 +19,7 @@ toggle-language span {
 }
 
 header .current-content-language {
-	color: #1a27a1;
+	color: var(--first-color);
 }
 
 toggle-language mat-icon {
@@ -35,17 +38,16 @@ toggle-language mat-icon {
 	font-size: 14px;
 	font-weight: 500;
 }
+
+.mat-icon-button:hover {
+	color: var(--first-color);
+}
+
 .mat-button, .mat-icon-button {
 	box-sizing: border-box;
 	position: relative;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
 	cursor: pointer;
-	outline: none;
 	border: none;
-	-webkit-tap-highlight-color: transparent;
 	display: inline-block;
 	white-space: nowrap;
 	text-decoration: none;

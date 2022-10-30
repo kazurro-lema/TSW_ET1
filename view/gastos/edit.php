@@ -11,7 +11,7 @@ $view->setVariable("title", "Edit Gasto");
 ?>
 
 <card-form>
-	<mat-card class="mat-card mat-focus-indicator">
+	<mat-card class="mat-card">
 		<mat-card-header class="mat-card-header card-title">
 			<div class="mat-card-header-text"></div> <?= i18n("Modify gasto") ?>
 		</mat-card-header>
