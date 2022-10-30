@@ -1,8 +1,25 @@
 @import "_google-fonts-roboto.css";
 @import "variables.css";
 
-*{
-	font-family: 'Roboto';
+* {
+	font-family: "Roboto";
+}
+
+::-webkit-scrollbar {
+	width: 18px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.06);
+	border: 6px solid transparent;
+	border-radius: 16px;
+	background-clip: padding-box;
+}
+
+* {
+	scrollbar-color: rgba(0, 0, 0, 0.06) transparent;
+	scrollbar-width: thin;
 }
 
 html {

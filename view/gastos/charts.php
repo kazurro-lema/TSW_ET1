@@ -11,6 +11,44 @@ $view->setVariable("title", "Gastos");
 
 ?>
 
+<card-form>
+	<mat-card class="mat-card">
+		<mat-card-header class="mat-card-header card-title" id="filterDropDown">
+			<?= i18n("Analitica") ?>
+			<mat-icon class='material-icons material-symbols-outlined'>unfold_more</mat-icon>
+		</mat-card-header>
+		<card-fieldset id="filter">
+			<form action="index.php?controller=gastos&amp;action=charts" method="POST">
+				<section>
+				<form-element style="flex: 1 1 100%;">
+						<label class="label" for="nombre"><?= i18n("tipo_gasto") ?></label>
+						<select name="tipo" selected required>
+							<option value="alimentacion">Alimentacion</option>
+							<option value="ocio">Ocio</option>
+							<option value="liquidaciones">Liquidaciones</option>
+							<option value="pagos">Pagos</option>
+						</select>
+					</form-element>
+
+					<form-element style="flex: 1 1 50%;">
+						<label class="label" for="nombre"><?= i18n("FechaIni") ?></label>
+						<input type="date" name="fechaIni">
+					</form-element>
+
+					<form-element style="flex: 1 1 50%;">
+						<label class="label" for="nombre"><?= i18n("FechaFin") ?></label>
+						<input type="date" name="fechaFin">
+					</form-element>
+
+					<div class="form-button-panel">
+						<input class="submit-button" type="submit" name="submit" value="<?= i18n("Filtrar") ?>">
+					</div>
+				</section>
+			</form>
+		</card-fieldset>
+	</mat-card>
+</card-form>
+
 <div>
 	<div class="chart-dashboard">
 		<figure class="highcharts-figure">
@@ -29,30 +67,15 @@ $view->setVariable("title", "Gastos");
 	</div>
 </div>
 
-<div class="options ng-trigger-openCloseFilters">
-	<mat-tab-group class="mat-tab-group mat-tab-group-2 tabsGrcCatalog mat-primary">
-		<mat-tab-header class="mat-tab-header">
-			<div class="mat-tab-label-container">
-				<div role="tablist" class="mat-tab-list" style="transform: translateX(0px);">
-					<div class="mat-tab-labels">
-						<div role="tab" class="mat-tab-label mat-tab-label-active" id="mat-tab-label-0-0" tabindex="0">
-							<div class="mat-tab-label-content">
-								<span><?= i18n("Filter") ?></span>
-							</div>
-						</div>
-					</div>
-					<mat-ink-bar class="mat-ink-bar" style="visibility: visible; left: 0px; width: 228px;"></mat-ink-bar>
-				</div>
-			</div>
-		</mat-tab-header>
-	</mat-tab-group>
-
-</div>
-
 <script>
 	window.docReady(() => {
 		createAndAddPieChart();
 		createAndAddLineChart();
+	});
+
+	$("#filterDropDown").click(function() {
+
+		$("#filter").slideToggle("slow");
 	});
 
 	function createAndAddPieChart() {
@@ -144,7 +167,7 @@ $view->setVariable("title", "Gastos");
 			month = new Date('<?php echo $gasto->getFecha(); ?>').getMonth();
 
 			arr = hashmap.get('<?php echo $gasto->getTipo(); ?>');
-			arr[month] = <?php echo $gasto->getCantidadGasto(); ?>;
+			arr[month] += 1;
 
 			hashmap.set('<?php echo $gasto->getTipo(); ?>', arr);
 		<?php endforeach; ?>
