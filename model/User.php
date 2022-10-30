@@ -53,6 +53,9 @@ class User
 		if (strlen($this->username) < 5) {
 			$errors["username"] = "Username must be at least 5 characters length";
 		}
+		if (str_contains($this->username, ' ')) {
+			$errors["username"] = "Username must not contain spaces";
+		}
 		if (strlen($this->email) < 5) {
 			$errors["email"] = "Email must be at least 5 characters length";
 		}

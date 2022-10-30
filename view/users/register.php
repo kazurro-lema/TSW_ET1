@@ -9,9 +9,19 @@ $view->setVariable("title", "Register");
 
 <?php
 
-if (isset($errors["general"])) {
-	$x = $errors['general'];
-	echo "<script type='text/javascript'>alert('$x')</script>";
+if (isset($errors["username"])) {
+	$u = $errors['username'];
+	echo "<script type='text/javascript'>alert('$u')</script>";
+}
+
+if (isset($errors["email"])) {
+	$e = $errors['email'];
+	echo "<script type='text/javascript'>alert('$e')</script>";
+}
+
+if (isset($errors["passwd"])) {
+	$p = $errors['passwd'];
+	echo "<script type='text/javascript'>alert('$p')</script>";
 }
 
 ?>
