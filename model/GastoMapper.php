@@ -197,40 +197,30 @@ class GastoMapper
 	{
 		$query = $this->db->query("SELECT * FROM gastos, users WHERE users.username = gastos.author ORDER BY fecha DESC");
 
-		$delimiter = ";";
-		$filename = "data.csv";
-
-		$f = fopen('php://memory', 'w');
-
-		$fields = array('nombre_gasto', 'cantidad_gasto', 'tipo', 'entidad', 'fecha', 'descripcion', 'fichero');
-		fputcsv($f, $fields, $delimiter);
-
 		$gastos_db = $query->fetchAll(PDO::FETCH_ASSOC);
 
-		$gastos = array();
+		header('Content-type: aplication/vnd.ms-excel');
+		header('Content-Disposition: attachement; filename=hioa.csv');
+		header('Pragma: no-cache');
+		header('Expires: 0');
+		echo "nombre_gasto;cantidad_gasto;tipo;entidad;fecha;descripcion;fichero";
+		echo "\n";
 
 		foreach ($gastos_db as $gasto) {
 
 			$author = new User($gasto["username"]);
 			if ($author == $gastoAuthor) {
-				$lineData = array($gastos, new Gasto(
-					$gasto["id"],
-					$gasto["nombre_gasto"],
-					$gasto["cantidad_gasto"],
-					$gasto["tipo"],
-					$gasto["entidad"],
-					$gasto["fecha"],
-					$gasto["descripcion"],
-					$gasto["fichero"]
-				));
-				fputcsv($f, $lineData, $delimiter);
+				
+					echo $gasto["nombre_gasto"].';';
+					echo $gasto["cantidad_gasto"].';';
+					echo $gasto["tipo"].';';
+					echo $gasto["entidad"].';';
+					echo $gasto["fecha"].';';
+					echo $gasto["descripcion"].';';
+					echo $gasto["fichero"].';';
+					echo "\n";
 			}
 		}
-		fseek($f, 0);
 
-		header('Content-Type: text/csv');
-		header('Content-Disposition: attachment; filename="' . $filename . '";');
-
-		fpassthru($f);
 	}
 }
