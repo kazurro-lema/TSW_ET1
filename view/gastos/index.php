@@ -32,7 +32,10 @@ $view->setVariable("title", "Gastos");
 						</div>
 						<div>
 							<div class="bill-name"><span><?= $gasto->getDescripcion() ?></span></div>
-							<div class="bill-time-info"><span>Bill created: <span><?= $gasto->getFecha() ?></span></span></div>
+							<div class="bill-time-info">
+								<span>Importe: <span><?= $gasto->getCantidadGasto() ?>€ </span> | </span>
+								<span>Bill created: <span><?= $gasto->getFecha() ?></span></span>
+							</div>
 						</div>
 					</div>
 					<div class="bill-actions">
