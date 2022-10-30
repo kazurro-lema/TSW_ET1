@@ -17,7 +17,7 @@ $view->setVariable("title", "Gastos");
 		</mat-card-header>
 
 		<?php
-			header('Content-Type')
+			header('Content-Type: ')
 		?>
 
 		<?php foreach ($gastos as $gasto) : ?>
