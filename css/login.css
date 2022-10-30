@@ -242,14 +242,12 @@ h4.form-header span.form-header {
 	margin-top: 15px;
 	text-align: right;
 	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .bc-form-options span {
-	width: 200px;
 	text-align: center;
-	flex-basis: 200px;
 }
 
 .bc-form-options span a {

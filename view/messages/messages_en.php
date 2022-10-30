@@ -4,7 +4,8 @@
 // empty array, no translation needed,
 // since keys are in english in the source code.
 $i18n_messages = array(
-    "Create gasto" => "Create bill",
+	"Company" => "Bills Management",
+  "Create gasto" => "Create bill",
 	"nombre_gasto" => "Bill name",
 	"cantidad_gasto" => "Amount (€)",
 	"tipo" => "Type",
@@ -35,6 +36,6 @@ $i18n_messages = array(
 	"email" => "Email",
 	"password" => "Password",
 	"Recordar Usuario y Contraseña" => "Remember user and password?",
-	"Not user?" => "Not user?"
+	"Not user?" => "Not user?",
 )
 ?>
