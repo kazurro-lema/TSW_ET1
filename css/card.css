@@ -63,6 +63,7 @@ card-fieldset section {
 	flex-flow: row wrap;
 	box-sizing: border-box;
 	display: flex;
+	flex-wrap: wrap;
 }
 
 /* Inputs */
@@ -74,6 +75,7 @@ form-element:first-child {
 form-element {
 	padding: 12px 6px;
 	box-sizing: border-box;
+	min-width: 215px;
 }
 
 form-element > label {
@@ -86,22 +88,21 @@ form-element > label {
 form-element > input,
 select,
 textarea {
+	display: inline-flex;
+	width: 100%;
 	font-size: inherit;
 	font-weight: 400;
 	line-height: 1.125;
 	font-family: Roboto, "Helvetica Neue", sans-serif;
 	letter-spacing: normal;
 	padding: 12px;
-	border-radius: 4px 4px 0 0;
 	background-color: rgba(0, 0, 0, 0.04);
-	display: inline-flex;
 	align-items: baseline;
 	box-sizing: border-box;
-	width: 100%;
-	border-top: 0;
-	border-right: 0;
-	border-left: 0;
+	border: none;
 	border-bottom-width: 2px;
+	border-bottom: solid 2px #000;
+	border-radius: 4px 4px 0 0;
 }
 
 form-element > input,
@@ -130,7 +131,7 @@ textarea:focus-visible {
 	font-weight: 600 !important;
 	text-transform: uppercase;
 	padding: 0 16px;
-	border: 2px solid !important;
+	border: solid 2px !important;
 	border-radius: 4px;
 	box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 0px 0px rgb(0 0 0 / 14%),
 		0px 0px 0px 0px rgb(0 0 0 / 12%);

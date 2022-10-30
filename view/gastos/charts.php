@@ -11,17 +11,43 @@ $view->setVariable("title", "Gastos");
 
 ?>
 
-<figure class="highcharts-figure">
-	<div id="container"></div>
-	<p class="highcharts-description">
-	</p>
-</figure>
+<div>
+	<div class="chart-dashboard">
+		<figure class="highcharts-figure">
+			<div id="container"></div>
+			<p class="highcharts-description">
+			</p>
+		</figure>
+	</div>
 
-<figure class="highcharts-figure">
-	<div id="container2"></div>
-	<p class="highcharts-description">
-	</p>
-</figure>
+	<div class="chart-dashboard">
+		<figure class="highcharts-figure">
+			<div id="container2"></div>
+			<p class="highcharts-description">
+			</p>
+		</figure>
+	</div>
+</div>
+
+<div class="options ng-trigger-openCloseFilters">
+	<mat-tab-group class="mat-tab-group mat-tab-group-2 tabsGrcCatalog mat-primary">
+		<mat-tab-header class="mat-tab-header">
+			<div class="mat-tab-label-container">
+				<div role="tablist" class="mat-tab-list" style="transform: translateX(0px);">
+					<div class="mat-tab-labels">
+						<div role="tab" class="mat-tab-label mat-tab-label-active" id="mat-tab-label-0-0" tabindex="0">
+							<div class="mat-tab-label-content">
+								<span>Filter</span>
+							</div>
+						</div>
+					</div>
+					<mat-ink-bar class="mat-ink-bar" style="visibility: visible; left: 0px; width: 228px;"></mat-ink-bar>
+				</div>
+			</div>
+		</mat-tab-header>
+	</mat-tab-group>
+
+</div>
 
 <script>
 	window.docReady(() => {
@@ -49,36 +75,30 @@ $view->setVariable("title", "Gastos");
 
 		Highcharts.chart('container2', {
 			chart: {
-				plotBackgroundColor: null,
-				plotBorderWidth: null,
-				plotShadow: false,
 				type: 'pie'
 			},
 			title: {
 				text: 'Tipos de gastos'
 			},
 			tooltip: {
-				pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-			},
-			accessibility: {
-				point: {
-					valueSuffix: '%'
+				formatter: function() {
+					return '<b>' + this.point.name + '</b>: ' + this.y;
 				}
 			},
 			plotOptions: {
 				pie: {
-					allowPointSelect: true,
-					cursor: 'pointer',
-					dataLabels: {
-						enabled: true,
-						format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-					}
+					shadow: false
 				}
 			},
 			series: [{
 				name: 'Brands',
 				colorByPoint: true,
-				data: datos
+				data: datos,
+				innerSize: '40%',
+				showInLegend: true,
+				dataLabels: {
+					enabled: false
+				}
 			}]
 		});
 	};

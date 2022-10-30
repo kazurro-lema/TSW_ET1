@@ -16,9 +16,6 @@ if (isset($errors["general"])) {
 ?>
 <div class="login-page">
 	<div class="login-header">
-		<div class="bc-logo">
-			<img src="/login/auth/resources/vnghb/login/biccloud/img/bic-cloud-logo-login.png">
-		</div>
 		<div class="bc-navigation">
 			<div class="login-lang kc-locale">
 				<?php include(__DIR__ . "/../layouts/toggleLang.php"); ?>
@@ -50,7 +47,7 @@ if (isset($errors["general"])) {
 							</div>
 						</div>
 						<div class="bc-form-options">
-							<span class="forgot-pass">
+							<span class="register">
 								<?= i18n("Not user?") ?> <a href="index.php?controller=users&amp;action=register"><?= i18n("Register here!") ?></a>
 							</span>
 						</div>

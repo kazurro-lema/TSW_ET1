@@ -17,21 +17,20 @@ $view->setVariable("title", "Edit Gasto");
 		</mat-card-header>
 		<card-fieldset>
 			<form action="index.php?controller=gastos&amp;action=edit" method="POST">
-				<section style="flex-flow: row wrap;box-sizing: border-box;display: flex;">
-
-					<form-element style="flex: 1 1 100%; box-sizing: border-box; max-width: 100%;">
+				<section>
+					<form-element style="flex: 1 1 100%;">
 						<label class="label" for="nombre"><?= i18n("nombre_gasto") ?></label>
 						<input type="text" name="nombre_gasto" value="<?= isset($_POST["nombre_gasto"]) ? $_POST["nombre_gasto"] : $gasto->getNombreGasto() ?>" required>
 						<?= isset($errors["nombre_gasto"]) ? i18n($errors["nombre_gasto"]) : "" ?>
 					</form-element>
 
-					<form-element style="flex: 1 1 33.33%; box-sizing: border-box; max-width: 33.33%;">
+					<form-element style="flex: 1 1 33.33%;">
 						<label class="label" for="nombre"><?= i18n("cantidad_gasto") ?></label>
 						<input type="text" name="cantidad_gasto" value="<?= isset($_POST["cantidad_gasto"]) ? $_POST["cantidad_gasto"] : $gasto->getCantidadGasto() ?>" required>
 						<?= isset($errors["cantidad_gasto"]) ? i18n($errors["cantidad_gasto"]) : "" ?>
 					</form-element>
 
-					<form-element style="flex: 1 1 33.33%; box-sizing: border-box; max-width: 33.33%;">
+					<form-element style="flex: 1 1 33.33%;">
 						<label class="label" for="nombre"><?= i18n("tipo_gasto") ?></label>
 						<select name="tipo" selected value="<?= $gasto->getTipo() ?>" required>
 							<option value="alimentacion">Alimentacion</option>
@@ -41,25 +40,25 @@ $view->setVariable("title", "Edit Gasto");
 						</select>
 					</form-element>
 
-					<form-element style="flex: 1 1 33.33%; box-sizing: border-box; max-width: 33.33%;">
+					<form-element style="flex: 1 1 33.33%;">
 						<label class="label" for="nombre"><?= i18n("entidad") ?></label>
 						<input type="text" name="entidad" value="<?= isset($_POST["entidad"]) ? $_POST["entidad"] : $gasto->getEntidad() ?>">
 						<?= isset($errors["entidad"]) ? i18n($errors["entidad"]) : "" ?>
 					</form-element>
 
-					<form-element style="flex: 1 1 100%; box-sizing: border-box; max-width: 100%;">
+					<form-element style="flex: 1 1 100%;">
 						<label class="label" for="nombre"><?= i18n("descripcion") ?></label>
 						<textarea name="descripcion" rows="4" cols="50" value="<?= isset($_POST["descripcion"]) ? $_POST["descripcion"] : $gasto->getDescripcion() ?>"><?= htmlentities($gasto->getDescripcion()) ?></textarea>
 						<?= isset($errors["descripcion"]) ? i18n($errors["descripcion"]) : "" ?>
 					</form-element>
 
-					<form-element style="flex: 1 1 50%; box-sizing: border-box; max-width: 50%;">
+					<form-element style="flex: 1 1 50%;">
 						<label class="label" for="nombre"><?= i18n("fecha") ?></label>
 						<input type="date" name="fecha" value="<?= isset($_POST["fecha"]) ? $_POST["fecha"] : $gasto->getFecha() ?>" required>
 						<?= isset($errors["fecha"]) ? i18n($errors["fecha"]) : "" ?>
 					</form-element>
 
-					<form-element style="flex: 1 1 50%; box-sizing: border-box; max-width: 50%;">
+					<form-element style="flex: 1 1 50%;">
 						<label class="label" for="nombre"><?= i18n("fichero") ?></label>
 						<input type="file" name="fichero" value="<?= isset($_POST["fichero"]) ? $_POST["fichero"] : $gasto->getFichero() ?>">
 						<?= isset($errors["fichero"]) ? i18n($errors["fichero"]) : "" ?>

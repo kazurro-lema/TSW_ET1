@@ -1,12 +1,5 @@
 @import "_google-fonts-roboto.css";
 
-* {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	font-family: "Roboto", sans-serif;
-}
-
 *:focus {
 	outline: 2px solid;
 	outline-color: #5db4ff;
@@ -48,6 +41,7 @@ a {
 }
 
 /* Header */
+
 .login-header, .bc-msg {
 	flex: none;
 }
@@ -59,21 +53,8 @@ a {
 	margin-right: auto;
 }
 
-.login-form .form-header.error-header {
-	text-align: center;
-}
-
 .login-header {
 	display: flex;
-}
-
-.bc-logo {
-	padding: 40px 50px;
-	flex: none;
-}
-
-.bc-logo img {
-	width: 220px;
 }
 
 .bc-navigation {
@@ -85,17 +66,8 @@ a {
 	justify-content: flex-end;
 }
 
-.bc-urls {
-	width: 100%;
-	margin-right: 35px;
-}
-
-.bc-urls .separator {
-	color: #fff;
-	padding: 0 4px;
-}
-
 /* Contenido */
+
 .bc-content {
 	height: 100%;
 	display: flex;
@@ -108,14 +80,6 @@ a {
 
 #kc-login-form {
 	margin-top: 75px;
-}
-
-#kc-reset-password-form {
-	margin-top: 45px;
-}
-
-#kc-passwd-update-form {
-	margin-top: 40px;
 }
 
 .bc-login-form .inputs-container.show-on-mobile {
@@ -155,32 +119,8 @@ div.bc-info span.bc-info {
 	line-height: 24px;
 }
 
-div.bc-info span.bc-info.emailInstruction {
-	color: #fff;
-	font-size: 16px;
-	letter-spacing: 0.35px;
-	line-height: 24px;
-	display: block;
-	width: 445px;
-}
+/* Alertas */
 
-/* ERRORS */
-#kc-error-message, #kc-code {
-	text-align: center;
-	margin-top: 30px;
-	color: #fff;
-	letter-spacing: 0.35px;
-}
-
-/* INSTRUCTIONS */
-#kc-info-message {
-	text-align: center;
-	margin-top: 30px;
-	color: #fff;
-	letter-spacing: 0.35px;
-}
-
-/*ALERTS*/
 .alert {
 	margin-top: 44px;
 	padding: 0 14px;
@@ -203,6 +143,7 @@ div.bc-info span.bc-info.emailInstruction {
 }
 
 /* Formulario */
+
 h4.form-header {
 	margin-top: 67px;
 	margin-bottom: 12px;
@@ -326,25 +267,10 @@ h4.form-header span.form-header {
 			display: block !important;
 	}
 
-	.bc-logo {
-			flex: 1;
-			padding: 20px 24px;
-	}
-
-	.bc-logo img {
-			width: 100%;
-			max-width: 170px;
-	}
-
 	.bc-navigation {
 			flex: 1;
 			padding: 20px;
 			align-items: baseline;
-	}
-
-	.bc-urls {
-			margin: 0;
-			font-size: 14px;
 	}
 
 	.bc-content {
@@ -363,14 +289,6 @@ h4.form-header span.form-header {
 
 	.bc-login-form {
 			margin-bottom: 25px;
-	}
-
-	#kc-reset-password-form {
-			margin-top: 35px;
-	}
-
-	#kc-passwd-update-form {
-			margin-top: 22px;
 	}
 
 	#kc-login-form {
@@ -399,11 +317,7 @@ h4.form-header span.form-header {
 	}
 
 	.login-form .input-content {
-			margin-bottom: 44px;
-	}
-
-	.login-form #kc-login-form .input-content:nth-child(2) {
-			margin-bottom: 3px;
+			margin-bottom: 20px;
 	}
 
 	.login-form .input-container {
@@ -445,10 +359,6 @@ h4.form-header span.form-header {
 
 	.bc-info {
 			font-size: 14px;
-	}
-
-	div.bc-info span.bc-info.emailInstruction {
-			width: 100%;
 	}
 
 	.alert {

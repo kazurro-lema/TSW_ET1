@@ -28,7 +28,7 @@ mat-avatar {
 mat-avatar mat-icon {
 	width: 40px;
 	height: 40px;
-	font-size: 40px!important;
+	font-size: 40px !important;
 	text-align: center;
 	color: var(--first-color-light);
 }
@@ -36,6 +36,9 @@ mat-avatar mat-icon {
 .bill-card .bill-info {
 	align-self: center;
 	margin: 0 16px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .bill-card .bill-info .bill-proccess span {
@@ -46,6 +49,7 @@ mat-avatar mat-icon {
 	color: var(--first-color-light);
 	text-align: left;
 }
+
 .bill-card .bill-info span {
 	font-size: 14px;
 	line-height: 20px;
@@ -53,6 +57,13 @@ mat-avatar mat-icon {
 
 .bill-card .bill-info .bill-name {
 	word-break: break-word;
+}
+
+.bill-card .bill-info .bill-proccess,
+.bill-name,
+.bill-time-info {
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .bill-card .bill-actions .bill-actions-content {
@@ -100,4 +111,23 @@ button.menu-actions span.mat-button-wrapper {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+@media screen and (max-width: 550px) {
+	.bill-card {
+		flex-wrap: wrap;
+	}
+
+	mat-avatar {
+		display: none;
+	}
+
+	.bill-card .bill-info {
+		width: 100%;
+	}
+
+	.bill-card .bill-actions .bill-actions-content {
+		justify-content: center;
+		padding-top: 10px;
+	}
 }

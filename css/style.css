@@ -32,7 +32,7 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0 1rem;
+	padding: 0 2rem;
 	background-color: var(--white-color);
 	z-index: var(--z-fixed);
 	transition: 0.5s;
@@ -121,7 +121,11 @@ a {
 }
 
 .body-pd {
-	padding-left: calc(var(--nav-width) + 1rem);
+	padding-left: var(--nav-width);
+}
+
+.body-pd .header_toggle {
+	padding-left: 2rem;
 }
 
 .active {
