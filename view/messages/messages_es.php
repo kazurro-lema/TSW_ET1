@@ -8,6 +8,8 @@ array(
 	"tipo" => "Tipo",
 	"entidad" => "Entidad",
 	"fecha" => "Fecha",
+	"FechaIni" => "Fecha Inicial",
+	"FechaFin" => "Fecha Final",
 	"descripcion" => "Descripcion",
 	"fichero" => "Fichero",
 	"Add" => "Añadir",

@@ -5,6 +5,8 @@ require_once(__DIR__ . "/../core/I18n.php");
 
 require_once(__DIR__ . "/../model/User.php");
 
+error_reporting(0);
+
 class BaseController
 {
 	protected $view;

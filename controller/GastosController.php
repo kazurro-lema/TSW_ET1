@@ -153,10 +153,19 @@ class GastosController extends BaseController
 
 	public function charts()
 	{
-		$gastos = $this->gastoMapper->findByLast12Months($_POST["fechaIni"], $_POST["fechaFin"]);
-		
-		$gastosOnLast12Months = $this->gastoMapper->findAll();
+		if (!isset($_POST["fechaIni"])) {
+			$_POST["fechaIni"] = "";
+		}
 
+		if (!isset($_POST["fechaFin"])) {
+			$_POST["fechaFin"] = "";
+		}
+
+		$filters = $this->gastoMapper->getChartsFilters($_POST["fechaIni"], $_POST["fechaFin"]);
+		$gastos = $this->gastoMapper->findByAuthorFiltered($this->currentUser, $_POST["fechaIni"], $_POST["fechaFin"]);
+		$gastosOnLast12Months = $this->gastoMapper->findByAuthorFiltered($this->currentUser, $_POST["fechaIni"], $_POST["fechaFin"]);
+
+		$this->view->setVariable("filters", $filters);
 		$this->view->setVariable("gastos", $gastos);
 		$this->view->setVariable("gastosOnLast12Months", $gastosOnLast12Months);
 		$this->view->render("gastos", "charts");

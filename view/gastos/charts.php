@@ -3,6 +3,7 @@
 require_once(__DIR__ . "/../../core/ViewManager.php");
 $view = ViewManager::getInstance();
 
+$filters = $view->getVariable("filters");
 $gastos = $view->getVariable("gastos");
 $gastosOnLast12Months = $view->getVariable("gastosOnLast12Months");
 $currentuser = $view->getVariable("currentusername");
@@ -21,7 +22,7 @@ $view->setVariable("title", "Gastos");
 			<form action="index.php?controller=gastos&amp;action=charts" method="POST">
 				<section>
 				<form-element style="flex: 1 1 100%;">
-						<label class="label" for="nombre"><?= i18n("tipo_gasto") ?></label>
+						<label class="label" for="nombre"><?= i18n("tipo") ?></label>
 						<select name="tipo" selected required>
 							<option value="alimentacion">Alimentacion</option>
 							<option value="ocio">Ocio</option>
@@ -32,12 +33,12 @@ $view->setVariable("title", "Gastos");
 
 					<form-element style="flex: 1 1 50%;">
 						<label class="label" for="nombre"><?= i18n("FechaIni") ?></label>
-						<input type="date" name="fechaIni">
+						<input type="date" name="fechaIni" value="<?= isset($_POST["fechaIni"]) ? $_POST["fechaIni"] : $filters->getFechaIni() ?>">
 					</form-element>
 
 					<form-element style="flex: 1 1 50%;">
 						<label class="label" for="nombre"><?= i18n("FechaFin") ?></label>
-						<input type="date" name="fechaFin">
+						<input type="date" name="fechaFin" value="<?= isset($_POST["fechaFin"]) ? $_POST["fechaFin"] : $filters->getFechaFin() ?>">
 					</form-element>
 
 					<div class="form-button-panel">
@@ -85,7 +86,13 @@ $view->setVariable("title", "Gastos");
 
 		<?php foreach ($gastos as $gasto) : ?>
 
-			hashmap.set('<?php echo $gasto->getTipo(); ?>', <?php echo $gasto->getCantidadGasto(); ?>);
+			$cantidad = 0;
+
+			if(hashmap.get('<?php echo $gasto->getTipo(); ?>') != null){
+				$cantidad = hashmap.get('<?php echo $gasto->getTipo(); ?>');
+			}
+
+			hashmap.set('<?php echo $gasto->getTipo(); ?>', $cantidad + <?php echo $gasto->getCantidadGasto(); ?>);
 		<?php endforeach; ?>
 
 		hashmap.forEach((value, key) => {
@@ -105,7 +112,7 @@ $view->setVariable("title", "Gastos");
 			},
 			tooltip: {
 				formatter: function() {
-					return '<b>' + this.point.name + '</b>: ' + this.y;
+					return '<b>' + this.point.name + '</b>: ' + this.y+ '€';
 				}
 			},
 			plotOptions: {

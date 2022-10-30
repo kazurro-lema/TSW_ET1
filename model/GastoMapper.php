@@ -4,6 +4,7 @@ require_once(__DIR__ . "/../core/PDOConnection.php");
 
 require_once(__DIR__ . "/../model/User.php");
 require_once(__DIR__ . "/../model/Gasto.php");
+require_once(__DIR__ . "/../model/ChartFilters.php");
 
 class GastoMapper
 {
@@ -90,39 +91,54 @@ class GastoMapper
 		return $gastos;
 	}
 
-	public function findByLast12Months($fechaIni = null, $fechaFin = null)
+	public function findByAuthorFiltered($gastoAuthor, $fechaIni = null, $fechaFin = null)
 	{
 		$filtros = '';
 
-		if(isset($fechaIni) && !empty($fechaIni)){
+		if (isset($fechaIni) && !empty($fechaIni)) {
 			$filtros = $filtros . "fecha >= '" . $fechaIni . "' and ";
 		}
 
-		if(isset($fechaFin) && !empty($fechaFin)){
+		if (isset($fechaFin) && !empty($fechaFin)) {
 			$filtros = $filtros . "fecha <= '" . $fechaFin . "' and ";
 		}
 
-		$stmt = $this->db->query("SELECT tipo, DATE_FORMAT(fecha, '%b') as fecha, COUNT(*) as num FROM gastos WHERE $filtros fecha <= NOW() and fecha >= Date_add(Now(),interval - 12 month) GROUP BY tipo, DATE_FORMAT(fecha, '%m-%Y')");
-
+		$stmt = $this->db->query("SELECT * FROM gastos, users WHERE $filtros users.username = gastos.author ORDER BY fecha DESC");
 		$gastos_db = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		$gastos = array();
 
 		foreach ($gastos_db as $gasto) {
-			array_push($gastos, new Gasto(
-				null,
-				null,
-				$gasto["num"],
-				$gasto["tipo"],
-				null,
-				$gasto["fecha"],
-				null, 
-				null, 
-				null
-			));
+
+			$author = new User($gasto["username"]);
+			if ($author == $gastoAuthor) {
+				array_push($gastos, new Gasto(
+					$gasto["id"],
+					$gasto["nombre_gasto"],
+					$gasto["cantidad_gasto"],
+					$gasto["tipo"],
+					$gasto["entidad"],
+					$gasto["fecha"],
+					$gasto["descripcion"],
+					$gasto["fichero"],
+					$author
+				));
+			}
 		}
 
 		return $gastos;
+	}
+
+	public function getChartsFilters($fechaIni = null, $fechaFin = null)
+	{
+		$filters = array();
+
+		array_push($filters, new ChartFilters(
+			$fechaIni,
+			$fechaFin
+		));
+
+		return $filters;
 	}
 
 	public function save(Gasto $gasto)
