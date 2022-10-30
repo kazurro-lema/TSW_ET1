@@ -21,7 +21,7 @@ $view->setVariable("title", "Gastos");
 			<bill-card>
 				<div class="bill-card">
 					<mat-avatar>
-						<mat-icon class="material-icons">payments</mat-icon>
+						<mat-icon class="material-icons">payment</mat-icon>
 					</mat-avatar>
 
 					<div class="bill-info">
@@ -33,8 +33,8 @@ $view->setVariable("title", "Gastos");
 						<div>
 							<div class="bill-name"><span><?= $gasto->getDescripcion() ?></span></div>
 							<div class="bill-time-info">
-								<span>Importe: <span><?= $gasto->getCantidadGasto() ?>€ </span> | </span>
-								<span>Bill created: <span><?= $gasto->getFecha() ?></span></span>
+								<span><?= i18n("cantidad_gasto") ?>: <span><?= $gasto->getCantidadGasto() ?>€ </span> | </span>
+								<span><?= i18n("fecha") ?>: <span><?= $gasto->getFecha() ?></span></span>
 							</div>
 						</div>
 					</div>

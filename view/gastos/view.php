@@ -29,7 +29,7 @@ $view->setVariable("title", "View Gasto");
 					</form-element>
 
 					<form-element style="flex: 1 1 33.33%;">
-						<label class="label" for="tipo_gasto"><?= i18n("tipo_gasto") ?></label>
+						<label class="label" for="tipo_gasto"><?= i18n("tipo") ?></label>
 						<select name="tipo" selected value="<?= $gasto->getTipo() ?>" disabled>
 							<option value="alimentacion">Alimentacion</option>
 							<option value="ocio">Ocio</option>

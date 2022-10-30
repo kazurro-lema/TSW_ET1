@@ -26,7 +26,7 @@ $view->setVariable("title", "Add Gasto");
 					</form-element>
 
 					<form-element style="flex: 1 1 33.33%;">
-						<label class="label" for="nombre"><?= i18n("tipo_gasto") ?></label>
+						<label class="label" for="nombre"><?= i18n("tipo") ?></label>
 						<select name="tipo" selected required>
 							<option value="alimentacion">Alimentacion</option>
 							<option value="ocio">Ocio</option>

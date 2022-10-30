@@ -25,6 +25,10 @@ array(
 	"Gastos \"%s\" successfully updated." => "Gastos \"%s\" modificados satisfactoriamente.",
 	"Gasto \"%s\" successfully deleted." => "Gasto \"%s\" eliminado satisfactoriamente.",
 	"Put_Email" => "Introduzca email",
-	"SignOut" => "Cerrar sesión"
+	"SignOut" => "Cerrar sesión",
+	"Filter" => "Filtro",
+	"username" => "Nombre de usuario",
+	"email" => "Correo electrónico",
+	"password" => "Contraseña"
 )
 ?>
