@@ -173,14 +173,8 @@ class GastosController extends BaseController
 
 	public function descarga()
 	{
-		header('Content-Type: text/csv; charset=UTF-8');
-		header('Content-Disposition: attachment; filename=data.csv');
-		$output = fopen("php://output", "w");
-		fputcsv($output, array("nombre_gasto", "cantidad_gasto", "tipo", "entidad", "fecha", "descripcion", "fichero"));
-		$gastos = $this->gastoMapper->findByAuthor($this->currentUser);
-		fputcsv($output, $gastos);
-		
-		fclose($output);
+		$this->gastoMapper->descargar($this->currentUser);
+		$this->view->render("gastos", "index");
 	}
 }
 
