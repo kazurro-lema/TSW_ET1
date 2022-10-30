@@ -17,7 +17,10 @@ $view->setVariable("title", "Gastos");
 		</mat-card-header>
 
 		<?php
-			header('Content-Type: ')
+			header('Content-Type: text/csv; charset=UTF-8');
+			header('Content-Disposition: attachment; filename=data.csv');
+
+			
 		?>
 
 		<?php foreach ($gastos as $gasto) : ?>

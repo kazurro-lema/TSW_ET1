@@ -68,7 +68,6 @@ class UsersController extends BaseController
 			$user->setUsername($_POST["username"]);
 			$user->setEmail($_POST["email"]);
 			$user->setPassword($_POST["passwd"]);
-			$this->view->setFlash("Please login now");
 
 			try {
 				$user->checkIsValidForRegister();
