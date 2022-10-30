@@ -93,7 +93,11 @@ button.btnOpenActions {
 	color: rgba(0, 0, 0, 0.54);
 }
 
-button.btnOpenActions:hover {
+button.btnOpenActions a {
+	color: var(--first-color-light);
+}
+
+button.btnOpenActions a:hover {
 	color: var(--first-color);
 }
 
