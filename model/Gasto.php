@@ -121,6 +121,9 @@ class Gasto
         if (strlen(trim($this->cantidad_gasto)) == 0) {
             $errors["cantidad"] = "cantidad_gasto is mandatory";
         }
+        if (str_contains($this->cantidad_gasto, ',') || str_contains($this->cantidad_gasto, '\'')) {
+            $errors["cantidad_gasto"] = "El delimitador de decimal debe ser .";
+        }
         if (strlen(trim($this->tipo)) == 0) {
             $errors["tipo"] = "tipo is mandatory";
         }
