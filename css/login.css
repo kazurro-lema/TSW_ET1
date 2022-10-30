@@ -1,369 +1,359 @@
 @import "_google-fonts-roboto.css";
 @import "variables.css";
-
 *:focus {
-	outline: 2px solid;
-	outline-color: #5db4ff;
+    outline: 2px solid;
+    outline-color: #5db4ff;
 }
 
-html.bc-login, .bc-login body, .login-page {
-	width: 100%;
-	height: 100%;
+html.bc-login,
+.bc-login body,
+.login-page {
+    width: 100%;
+    height: 100%;
 }
 
 html.bc-login {
-	font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 a {
-	color: #fff;
-	text-decoration: none;
-	cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .overbg {
-	z-index: -2;
-	position: fixed;
-	background: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.3) 65%, rgba(0, 0, 0, 0.5) );
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
+    z-index: -2;
+    position: fixed;
+    background: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.3) 65%, rgba(0, 0, 0, 0.5));
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 
 .bc-login body {
-	background: url(../assets/background.jpg);
-	margin: 0;
+    background: url(../assets/background.jpg);
+    margin: 0;
 }
 
 .login-page {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
+
 
 /* Header */
 
-.login-header, .bc-msg {
-	flex: none;
+.login-header,
+.bc-msg {
+    flex: none;
 }
 
 .login-form {
-	width: 600px;
-	height: 100%;
-	margin-left: auto;
-	margin-right: auto;
+    width: 600px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .login-header {
-	display: flex;
+    display: flex;
 }
 
 .bc-navigation {
-	text-align: right;
-	width: 100%;
-	height: var(--header-height);
-	padding-right: 60px;
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
+    text-align: right;
+    width: 100%;
+    height: var(--header-height);
+    padding-right: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
+
 
 /* Contenido */
 
 .bc-content {
-	height: 100%;
-	display: flex;
-	align-items: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .bc-flex-container {
-	margin: auto;
+    margin: auto;
 }
 
 #kc-login-form {
-	margin-top: 75px;
+    margin-top: 75px;
 }
 
 .bc-login-form .inputs-container.show-on-mobile {
-	display: none;
+    display: none;
 }
 
 .bc-msg {
-	text-align: center;
-	color: #fff;
-	margin: 0;
+    text-align: center;
+    color: #fff;
+    margin: 0;
 }
 
 .bc-msg .title {
-	font-size: 36px;
-	font-weight: bold;
-	margin: 0;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
 }
 
 .bc-msg .subtitle {
-	font-size: 24px;
-	font-weight: 400;
-	margin: 0;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
 }
 
 div.bc-info span.bc-info {
-	color: #fff;
-	margin-top: 15px;
-	font-size: 16px;
-	letter-spacing: 0.35px;
-	line-height: 24px;
+    color: #fff;
+    margin-top: 15px;
+    font-size: 16px;
+    letter-spacing: 0.35px;
+    line-height: 24px;
 }
 
 div.bc-info span.bc-info {
-	color: #fff;
-	font-size: 16px;
-	letter-spacing: 0.35px;
-	line-height: 24px;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 0.35px;
+    line-height: 24px;
 }
+
 
 /* Alertas */
 
 .alert {
-	margin-top: 44px;
-	padding: 0 14px;
-	font-size: 14px;
-	height: 45px;
-	display: flex;
-	align-items: center;
-	color: #fff;
-	border: 1px solid;
-	border-radius: 6px;
+    margin-top: 44px;
+    padding: 0 14px;
+    font-size: 14px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    border: 1px solid;
+    border-radius: 6px;
 }
 
 .alert-icon {
-	font-size: 20px;
-	color: #fff;
+    font-size: 20px;
+    color: #fff;
 }
 
 .alert-text {
-	margin-left: 14px;
+    margin-left: 14px;
 }
+
 
 /* Formulario */
 
 h4.form-header {
-	margin-top: 67px;
-	margin-bottom: 12px;
-	font-size: 16px;
-	color: #fff;
+    margin-top: 67px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #fff;
 }
 
 h4.form-header span.form-header {
-	display: block;
-	font-size: 16px;
-	color: #fff;
-	letter-spacing: 0.35px;
-	line-height: 24px;
+    display: block;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 0.35px;
+    line-height: 24px;
 }
 
 .bc-login-form .inputs-container {
-	display: flex;
-	flex-direction: row;
-	color: #fff;
+    display: flex;
+    flex-direction: row;
+    color: #fff;
 }
 
 .inputs-container .input-content {
-	flex-grow: 1;
-	position: relative;
+    flex-grow: 1;
+    position: relative;
 }
 
 .inputs-container input {
-	font-family: Roboto, "Helvetica Neue", sans-serif;
-	font-size: 14px;
-	letter-spacing: 0.15px;
-	padding: 13px;
-	width: 100%;
-	background-color: rgba(255, 255, 255, 0);
-	outline: none;
-	color: #fff;
-	border: 2px solid #fff;
-	border-right-width: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.15px;
+    padding: 13px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    outline: none;
+    color: #fff;
+    border: 2px solid #fff;
+    border-right-width: 0;
 }
 
 .inputs-container input:focus {
-	border-color: #5db4ff;
+    border-color: #5db4ff;
 }
 
 ::-moz-placeholder {
-	font-family: "Roboto", sans-serif;
-	font-size: 14px;
-	color: rgba(255, 255, 255, 0.6);
-	letter-spacing: 0.15px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.15px;
 }
 
 ::-webkit-input-placeholder {
-	font-family: "Roboto", sans-serif;
-	font-size: 14px;
-	color: rgba(255, 255, 255, 0.6);
-	letter-spacing: 0.15px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.15px;
 }
 
 ::-ms-placeholder {
-	font-family: "Roboto", sans-serif;
-	font-size: 14px;
-	color: rgba(255, 255, 255, 0.6);
-	letter-spacing: 0.15px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.15px;
 }
 
 :-ms-placeholder {
-	font-family: "Roboto", sans-serif;
-	font-size: 14px;
-	color: rgba(255, 255, 255, 0.6);
-	letter-spacing: 0.15px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.15px;
 }
 
 ::placeholder {
-	font-family: "Roboto", sans-serif;
-	font-size: 14px;
-	color: rgba(255, 255, 255, 0.6);
-	letter-spacing: 0.15px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.15px;
 }
 
 .inputs-container .submit-content {
-	flex-basis: 155px;
+    flex-basis: 155px;
 }
 
 .inputs-container .submit {
-	border: none;
-	height: 51px;
-	background-color: #fff;
-	color: #3270a8;
-	cursor: pointer;
-	font-weight: bold;
-	font-size: 15px;
+    border: none;
+    height: 51px;
+    background-color: #fff;
+    color: #3270a8;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .bc-form-options {
-	margin-top: 15px;
-	text-align: right;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+    color: white;
+    margin-top: 15px;
+    text-align: right;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 15px;
 }
 
 .bc-form-options span {
-	text-align: center;
+    text-align: center;
 }
 
 .bc-form-options span a {
-	text-decoration: underline;
-	text-underline-position: under;
-	text-align: right;
-	font-size: 15px;
+    text-decoration: underline;
+    text-underline-position: under;
+    text-align: right;
+    font-size: 15px;
 }
 
+
 /* Mobile */
+
 @media only screen and (max-width: 768px) {
-	.hide-on-mobile {
-			display: none;
-	}
-
-	.show-on-mobile {
-			display: block !important;
-	}
-
-	.bc-navigation {
-			flex: 1;
-			padding: 20px;
-			align-items: baseline;
-	}
-
-	.bc-content {
-			padding: 0 20px;
-			align-items: baseline;
-	}
-
-	.login-form, .bc-flex-container {
-			width: 100%;
-			margin: 0;
-	}
-
-	h4.form-header {
-			margin-top: 47px;
-	}
-
-	.bc-login-form {
-			margin-bottom: 25px;
-	}
-
-	#kc-login-form {
-			margin-top: 54px;
-	}
-
-	.bc-msg {
-			margin: 24px 0 0;
-	}
-
-	.bc-msg .title {
-			font-size: 24px;
-	}
-
-	.bc-msg .subtitle {
-			font-size: 17px;
-	}
-
-	.login-form .form-header {
-			font-size: 11px;
-	}
-
-	.login-form .inputs-container {
-			width: 100%;
-			flex-direction: column;
-	}
-
-	.login-form .input-content {
-			margin-bottom: 20px;
-	}
-
-	.login-form .input-container {
-			height: 45px;
-			max-height: 45px;
-	}
-
-	.login-form .inputs-container .input {
-			background-color: #2c69a0;
-			display: block;
-			height: 45px;
-			border-right-width: 2px;
-	}
-
-	.inputs-container .submit-content {
-			flex-basis: auto;
-	}
-
-	.login-form .inputs-container .submit {
-			height: 45px;
-			max-height: 45px;
-	}
-
-	.login-form .bc-form-options {
-			margin: 24px 5px 36px;
-			font-size: 14px;
-	}
-
-	.login-form .bc-form-options span {
-			text-align: right;
-			display: inline;
-			float: none;
-	}
-
-	.login-form .bc-form-options a, .login-form .bc-form-options a:hover {
-			font-size: 14px;
-			text-decoration: none;
-	}
-
-	.bc-info {
-			font-size: 14px;
-	}
-
-	.alert {
-			margin: 25px 0;
-			height: auto;
-			padding: 10px;
-	}
+    .hide-on-mobile {
+        display: none;
+    }
+    .show-on-mobile {
+        display: block !important;
+    }
+    .bc-navigation {
+        flex: 1;
+        padding: 20px;
+        align-items: baseline;
+    }
+    .bc-content {
+        padding: 0 20px;
+        align-items: baseline;
+    }
+    .login-form,
+    .bc-flex-container {
+        width: 100%;
+        margin: 0;
+    }
+    h4.form-header {
+        margin-top: 47px;
+    }
+    .bc-login-form {
+        margin-bottom: 25px;
+    }
+    #kc-login-form {
+        margin-top: 54px;
+    }
+    .bc-msg {
+        margin: 24px 0 0;
+    }
+    .bc-msg .title {
+        font-size: 24px;
+    }
+    .bc-msg .subtitle {
+        font-size: 17px;
+    }
+    .login-form .form-header {
+        font-size: 11px;
+    }
+    .login-form .inputs-container {
+        width: 100%;
+        flex-direction: column;
+    }
+    .login-form .input-content {
+        margin-bottom: 20px;
+    }
+    .login-form .input-container {
+        height: 45px;
+        max-height: 45px;
+    }
+    .login-form .inputs-container .input {
+        background-color: #2c69a0;
+        display: block;
+        height: 45px;
+        border-right-width: 2px;
+    }
+    .inputs-container .submit-content {
+        flex-basis: auto;
+    }
+    .login-form .inputs-container .submit {
+        height: 45px;
+        max-height: 45px;
+    }
+    .login-form .bc-form-options {
+        margin: 24px 5px 36px;
+        font-size: 14px;
+    }
+    .login-form .bc-form-options span {
+        text-align: right;
+        display: inline;
+        float: none;
+    }
+    .login-form .bc-form-options a,
+    .login-form .bc-form-options a:hover {
+        font-size: 14px;
+        text-decoration: none;
+    }
+    .bc-info {
+        font-size: 14px;
+    }
+    .alert {
+        margin: 25px 0;
+        height: auto;
+        padding: 10px;
+    }
 }
