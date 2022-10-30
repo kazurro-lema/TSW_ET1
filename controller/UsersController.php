@@ -23,9 +23,6 @@ class UsersController extends BaseController
 
 	public function login()
 	{
-		$errors = array();
-		$errors["general"] = "oli";
-		$this->view->setVariable("errors", $errors);
 		if (isset($_COOKIE['password'])) {
 
 			if ($this->userMapper->isValidUser($_COOKIE['user'], $_COOKIE['password'])) {
@@ -102,6 +99,8 @@ class UsersController extends BaseController
 	public function logout()
 	{
 		session_destroy();
+		setcookie("user", null, time() - 604800);
+		setcookie("password", null, time() - 604800);
 		$this->view->redirect("users", "login");
 	}
 
