@@ -27,6 +27,10 @@ $i18n_messages = array(
 	"Gastos \"%s\" successfully updated." => "Bills \"%s\" successfully updated.",
 	"Gasto \"%s\" successfully deleted." => "Bill \"%s\" successfully deleted.",
 	"Put_Email" => "Put email",
-	"SignOut" => "Sign out"
+	"SignOut" => "Sign out",
+	"Filter" => "Filter",
+	"username" => "Username",
+	"email" => "Email",
+	"password" => "Password"
 )
 ?>

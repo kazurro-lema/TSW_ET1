@@ -37,7 +37,7 @@ $view->setVariable("title", "Gastos");
 					<div class="mat-tab-labels">
 						<div role="tab" class="mat-tab-label mat-tab-label-active" id="mat-tab-label-0-0" tabindex="0">
 							<div class="mat-tab-label-content">
-								<span>Filter</span>
+								<span><?= i18n("Filter") ?></span>
 							</div>
 						</div>
 					</div>
