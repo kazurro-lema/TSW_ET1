@@ -14,11 +14,20 @@ $view->setVariable("title", "Gastos");
 	<mat-card class="mat-card">
 		<mat-card-header class="mat-card-header card-title">
 			<?= i18n("Gastos") ?>
+			<button class="mat-icon-button btnOpenActions menu-actions">
+				<form method="POST" action="index.php?controller=gastos&amp;action=descarga" id="descarga_gasto" style="display: inline">
+					<a href="#" onclick="
+										if (confirm('<?= i18n("are you sure?") ?>')) {
+														document.getElementById('descarga_gasto').submit()
+										}">
+						<span class="mat-button-wrapper">
+							<mat-icon class="material-icons">file_download</mat-icon>
+						</span>
+				</form>
+				</a>
+				</form>
+			</button>
 		</mat-card-header>
-		<button class="mat-icon-button btnOpenActions menu-actions">
-			<form method="POST" action="index.php?controller=gastos&amp;action=descarga" style="display: inline">			
-			</form>
-		</button>
 		<?php foreach ($gastos as $gasto) : ?>
 
 			<bill-card>
