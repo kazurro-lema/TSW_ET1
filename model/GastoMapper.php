@@ -195,26 +195,24 @@ class GastoMapper
 		header('Content-Disposition: attachement; filename=hioa.csv');
 		header('Pragma: no-cache');
 		header('Expires: 0');
-		echo "nombre_gasto;cantidad_gasto;tipo;entidad;fecha;descripcion;fichero<br>";
+		echo "nombre_gasto;cantidad_gasto;tipo;entidad;fecha;descripcion;fichero";
+		echo "\n";
 
 		foreach ($gastos_db as $gasto) {
 
 			$author = new User($gasto["username"]);
 			if ($author == $gastoAuthor) {
 				
-					echo '<tr>';
-					echo '<td>'.$gasto["nombre_gasto"].'</td>';
-					echo '<td>'.$gasto["cantidad_gasto"].'</td>';
-					echo '<td>'.$gasto["tipo"].'</td>';
-					echo '<td>'.$gasto["entidad"].'</td>';
-					echo '<td>'.$gasto["fecha"].'</td>';
-					echo '<td>'.$gasto["descripcion"].'</td>';
-					echo '<td>'.$gasto["fichero"].'</td>';
-					echo '</tr>';
+					echo $gasto["nombre_gasto"].';';
+					echo $gasto["cantidad_gasto"].';';
+					echo $gasto["tipo"].';';
+					echo $gasto["entidad"].';';
+					echo $gasto["fecha"].';';
+					echo $gasto["descripcion"].';';
+					echo $gasto["fichero"].';';
+					echo "\n";
 			}
 		}
-
-		echo '<table>';
 
 	}
 }

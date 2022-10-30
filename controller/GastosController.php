@@ -174,7 +174,6 @@ class GastosController extends BaseController
 	public function descarga()
 	{
 		$this->gastoMapper->descargar($this->currentUser);
-		//$this->view->redirect("gastos", "index");
 	}
 }
 
