@@ -175,8 +175,12 @@ class GastosController extends BaseController
 	{
 		header('Content-Type: text/csv; charset=UTF-8');
 		header('Content-Disposition: attachment; filename=data.csv');
-
-		fputcsv()
+		$output = fopen("php://output", "w");
+		fputcsv($output, array("nombre_gasto", "cantidad_gasto", "tipo", "entidad", "fecha", "descripcion", "fichero"));
+		$gastos = $this->gastoMapper->findByAuthor($this->currentUser);
+		fputcsv($output, $gastos);
+		
+		fclose($output);
 	}
 }
 
