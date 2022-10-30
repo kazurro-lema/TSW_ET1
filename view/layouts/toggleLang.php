@@ -1,7 +1,18 @@
+<?php
+
+	$es = "current-content-language";
+	$en = "current-alternative-language";
+
+	if(isset($_SESSION['__currentlang__']) && !empty($_SESSION['__currentlang__']) && $_SESSION["__currentlang__"] === 'en'){
+		$es = "current-alternative-language"; 
+		$en = "current-content-language"; 
+	}
+
+?>
+
 <toggle-language>
 	<div class="toggle-language">
-		<span class="mat-menu-trigger lang-selector 
-				<?php echo $_SESSION["__currentlang__"] === 'es' ? "current-content-language" : "current-alternative-language"; ?>" aria-label="Content language">ES</span>
+		<span class="mat-menu-trigger lang-selector <?php echo $es; ?>" aria-label="Content language">ES</span>
 
 		<button class="mat-icon-button" id="toggleLang">
 			<span class="mat-button-wrapper">
@@ -9,7 +20,6 @@
 			</span>
 		</button>
 
-		<span class="mat-menu-trigger lang-selector 
-				<?php echo $_SESSION["__currentlang__"] === 'en' ? "current-content-language" : "current-alternative-language"; ?>">EN</span>
+		<span class="mat-menu-trigger lang-selector <?php echo $en; ?>">EN</span>
 	</div>
 </toggle-language>

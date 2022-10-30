@@ -103,7 +103,7 @@ a {
 
 .nav_link {
 	position: relative;
-	color: var(--first-color-light);
+	color: var(--white-color-light);
 	margin-bottom: 1.5rem;
 	transition: 0.3s;
 }
