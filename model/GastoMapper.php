@@ -90,9 +90,19 @@ class GastoMapper
 		return $gastos;
 	}
 
-	public function findByLast12Months()
+	public function findByLast12Months($fechaIni = null, $fechaFin = null)
 	{
-		$stmt = $this->db->query("SELECT tipo, DATE_FORMAT(fecha, '%b') as fecha, COUNT(*) as num FROM gastos WHERE fecha <= NOW() and fecha >= Date_add(Now(),interval - 12 month) GROUP BY tipo, DATE_FORMAT(fecha, '%m-%Y')");
+		$filtros = '';
+
+		if(isset($fechaIni) && !empty($fechaIni)){
+			$filtros = $filtros . "fecha >= '" . $fechaIni . "' and ";
+		}
+
+		if(isset($fechaFin) && !empty($fechaFin)){
+			$filtros = $filtros . "fecha <= '" . $fechaFin . "' and ";
+		}
+
+		$stmt = $this->db->query("SELECT tipo, DATE_FORMAT(fecha, '%b') as fecha, COUNT(*) as num FROM gastos WHERE $filtros fecha <= NOW() and fecha >= Date_add(Now(),interval - 12 month) GROUP BY tipo, DATE_FORMAT(fecha, '%m-%Y')");
 
 		$gastos_db = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
