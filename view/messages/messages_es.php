@@ -31,6 +31,8 @@ array(
 	"Filter" => "Filtro",
 	"username" => "Nombre de usuario",
 	"email" => "Correo electrónico",
-	"password" => "Contraseña"
+	"password" => "Contraseña",
+	"Recordar Usuario y Contraseña" => "¿Recordar usuario y contraseña?",
+	"Not user?" => "¿No estas registrado?"
 )
 ?>

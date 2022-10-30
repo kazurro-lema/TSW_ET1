@@ -46,6 +46,9 @@ if (isset($errors["general"])) {
 								<input tabindex="4" class="submit" name="login" id="kc-login" type="submit" value="<?= i18n("Login") ?>">
 							</div>
 						</div>
+						<div>
+							<input type="checkbox" name="chk_rec" value="chk_rec"> <?= i18n("Recordar Usuario y Contraseña") ?>
+						</div>
 						<div class="bc-form-options">
 							<span class="register">
 								<?= i18n("Not user?") ?> <a href="index.php?controller=users&amp;action=register"><?= i18n("Register here!") ?></a>

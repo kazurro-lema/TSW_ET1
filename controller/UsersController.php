@@ -23,10 +23,29 @@ class UsersController extends BaseController
 
 	public function login()
 	{
-		if (isset($_POST["username"])) {
+		if (isset($_COOKIE['password'])) {
+
+			if ($this->userMapper->isValidUser($_COOKIE['user'], $_COOKIE['password'])) {
+
+				$_SESSION["currentuser"] = $_COOKIE['user'];
+
+				$this->view->redirect("gastos", "index");
+			} else {
+				$errors = array();
+				$errors["general"] = "Esta cifrada gilipollas";
+				$this->view->setVariable("errors", $errors);
+			}
+		} else if (isset($_POST["username"])) {
 			if ($this->userMapper->isValidUser($_POST["username"], $_POST["passwd"])) {
 
 				$_SESSION["currentuser"] = $_POST["username"];
+
+				if ($_POST["chk_rec"] == "chk_rec") {
+					$login = htmlspecialchars(trim($_POST['username']));
+					$pass = htmlspecialchars(trim($_POST['passwd']));
+					setcookie("user", "$login", time() + 604800);
+					setcookie("password", "$pass", time() + 604800);
+				}
 
 				$this->view->redirect("gastos", "index");
 			} else {
@@ -80,6 +99,8 @@ class UsersController extends BaseController
 	public function logout()
 	{
 		session_destroy();
+		setcookie("user", null, time() - 604800);
+		setcookie("password", null, time() - 604800);
 		$this->view->redirect("users", "login");
 	}
 
@@ -96,7 +117,7 @@ class UsersController extends BaseController
 
 	public function delete()
 	{
-		
+
 		$usernames = $_SESSION["currentuser"];
 		$user = $this->userMapper->findByName($usernames);
 
